@@ -1,0 +1,437 @@
+﻿
+
+
+a{
+    color:black;
+}
+.texto1{
+
+    font-family:Arial ;
+    font-size:14px;
+    color:black;
+    
+}
+.texto1_submenu {
+    font-family:Arial ;
+    font-size:13px;
+    color:black;
+}
+.texto1_menu{
+
+    font-family:Arial ;
+    font-size:13px;
+    color:black;
+    
+    font-weight:bold;
+    
+}
+.texto1_rodape{
+    font-family:Arial;
+    font-size:14px;
+    color:#151414;
+       margin-top:60px;
+       font-weight:bold;
+    margin-left:175px;
+  
+   
+}
+
+.texto1_rodape li a{
+    margin-left:25px;
+    
+
+}
+.hrrodape {
+    display: block;
+    
+   margin-top: 0px !important;
+   margin-right:145px;
+    border-style: solid;
+    border-width: 1px;
+    width:640px;
+}
+.hrmenu{
+ 
+
+ margin:1px 0px 1px 0px !important;
+   
+
+
+}
+.texto1Noticia{
+     font-family:Arial ;
+    font-size:14px;
+    color:black;
+
+}
+.texto1Head{
+     font-family:Arial ;
+    font-size:28px;
+    color:black;
+    font-weight:bold;
+
+}
+
+.texto1Titulo{
+     font-family:Arial !important ;
+    font-size:15px !important;
+    color:black;
+    font-weight:bold;
+     text-transform: uppercase;
+    
+
+}
+.topoMenu {
+    padding:0px;
+    margin-bottom:35px;
+   float:right;
+   margin-right:16px;
+   
+  
+}
+/*########Menu###############*/
+.menu{
+  float:left;
+  margin-bottom:30px;
+   float:right;
+   margin-right:16px;
+   
+}
+.menu ul li{
+    margin-left:0px !important;
+}
+.menu ul li a{
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 0px 0px !important;
+}
+
+.menu li ul{
+
+    position: absolute;
+	margin-top:35px;
+	padding:0px !important;
+	display: none;
+   list-style:none !important;
+   z-index:10000;
+   width:150px;
+   background-color:#fff;
+    
+}
+.menu  li ul a{
+    display: block;
+	text-decoration:none;
+	color: black;
+	background-color:#fff;
+	padding: 5px;
+    font-family:Arial;
+    margin-top:3px;
+    margin-left:9px;
+    
+   
+	 
+}
+.menu  li ul a:hover{
+    background-color:#e0e0e0;
+
+}
+.menu li:hover ul { display: block; }
+.menu img{
+    float:left;
+}
+/*##########FIM MENU#########3*/
+
+/*########MenuLateral###############*/
+
+.menulateral{
+     text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 0px 0px !important;
+
+}
+.menulateral  li{
+     list-style:none;
+    border:0px none #fff !important;
+    padding: 5px 15px !important;
+
+}
+
+.menulateral  li:hover{
+    background-color:#e9e9e9;
+}
+
+.menulateral  li a{
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 0px 0px !important;
+
+}
+.menulateral  li ul{
+   
+     position: absolute;
+	margin-left:205px;
+    margin-top:-25px !important;
+	padding:0px !important;
+	display: none;
+   list-style:none !important;
+   z-index:10000;
+   width:190px;
+   background-color:#fff;
+}
+
+.menulateral li:hover ul { display: block; }
+
+/*########Fim MenuLateral###############*/
+
+
+.encosta{
+   margin-top:-10px;
+}
+.imagemtopo{
+
+    margin-top:2px;
+    margin-bottom:5px;
+   
+}
+.acessibilidade{
+
+    margin-left:55px;
+    text-decoration:none !important;
+}
+.imagemtopo span{
+    font-family:Arial;
+    color:#fff;
+    font-size:14px;
+    margin-right:6px;
+    padding:5px;
+    background-color:#373636;
+    border-radius:6px;
+}
+
+.imgCarrouse{
+
+     width:1500px;
+     height:335px !important;
+}
+
+.noticias{
+    background-color:#efefef;
+    margin-bottom:30px;
+}
+.noticias div{
+    padding-left:0px !important;
+    margin-bottom:20px;
+
+
+}
+.noticias img{
+    height:170px;
+   
+}
+
+.texto1_mais{
+      font-family:Arial;
+    font-size:18px;
+    color:#535353;
+    font-weight:bold;
+
+}
+
+#tituloNoticia{
+    margin-top:10px;
+
+}
+
+
+.zeroMarginPadding{
+    padding:0px !important; margin:0px !important;
+}
+.nopadding{
+    padding:0px 0px 0px 12px !important;
+
+}
+.nomargin{
+    margin:0px 0px 0px 12px !important;
+
+}
+.secretaria{
+    background-color:#009966;
+   padding-bottom:30px;
+   
+}
+.secretaria div{
+    margin-top:10px;
+   
+}
+
+.secretaria div img:hover{
+    margin-top:10px;
+    border:2px solid #fff;
+}
+.secretaria div p{
+    color:white;
+    font-family:Arial;
+    font-size:26px;
+    font-weight:bold;
+    margin-top:40px;
+    margin-bottom:20px;
+    margin-left:35px;
+}
+
+.rodape{
+    background-color:#efefef;
+    margin-top:30px;
+    
+}
+.rodape div{
+    margin-bottom:10px;
+   
+
+}
+.rodape div p{
+    margin-left:70px;
+    margin:0px !important;
+}
+.rodape_texto{
+
+    margin-left:20px;
+}
+.marginbootom30{
+    margin-bottom:30px;
+
+}
+/*########MenuRodape###############*/
+.rodape ul li a{
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 0px 0px !important;
+}
+
+.rodape li ul{
+
+    position: absolute;
+	margin-top:0px;
+    margin-left:20px;
+	padding:0px !important;
+	display: none;
+   list-style:none !important;
+   z-index:10000;
+   width:150px;
+   background-color:#e6e6e6;
+    
+}
+.rodape  li ul a{
+    display: block;
+	text-decoration:none;
+	color: black;
+	background-color:#e6e6e6;
+	padding: 5px;
+    font-family:Arial;
+    margin-top:3px;
+    margin-left:9px;
+    
+   
+	 
+}
+.rodape  li ul a:hover{
+    background-color:#ffffff;
+
+}
+.rodape li:hover ul { display: block; }
+
+/*########fimMenuRodape###############*/
+
+.topoSubpag{
+  
+    background-color:#002B42;
+    margin-bottom:40px;
+}
+.topoSubpag h3{
+
+      color:white;
+    font-weight:bold;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+/*Lista Noticias*/
+.linha-vertical {
+  margin-left:30px;
+  margin-top:10px;
+  border-left: 4px solid #006699;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+  float:left;
+  margin-bottom:20px;
+ 
+}
+.linha-vertical p{
+    font-size:13px;
+    margin:0px !important;
+    padding:0px !important;
+
+}
+.linha-vertical h5{
+     font-size:14px;
+    margin:0px !important;
+    padding:0px !important;
+    color:black;
+    font-weight:bold;
+}
+
+.linha-vertical h3{
+     font-size:20px;
+    margin:0px !important;
+    padding:0px !important;
+    color:black;
+    font-weight:bold;
+}
+
+/*Fim Lista Noticias*/
+
+/*Noticias*/
+.pagina {
+ 
+ 
+}
+.pagina p{
+    font-size:14px;
+       margin:0px 0px 20px 0px !important;
+    padding:0px !important;
+
+}
+.pagina h3{
+     font-size:16px;
+    margin:0px 0px 5px 0px !important;
+    padding:0px !important;
+    color:black;
+    font-weight:bold;
+}
+
+/*Fim  Noticias*/
+
+.pagsecretaria h3{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:20px;
+
+}
+
+.textobanner{
+      filter:alpha(opacity=50);
+     opacity: 0.5;
+     -moz-opacity:0.5;
+     -webkit-opacity:0.5;
+    background-color:#f1f1f1 !important;
+ 
+
+
+}
+.textobanner h4{
+
+    color:black !important;
+    
+
+}

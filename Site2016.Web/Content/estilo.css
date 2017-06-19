@@ -1,0 +1,34 @@
+﻿.carousel-inner > .item > img,
+.carousel-inner > .item > a > img 
+{
+    width: 100%;
+            margin: auto;
+}
+.menuEsquerdo{
+
+    margin-bottom:8px;
+}
+.rodape{
+    background-color:#EEEEEE;
+}
+
+.brasao_rodape{
+    margin-bottom:50px;
+    margin-top:50px;
+}
+
+.rodape_font{
+    color:#666666;
+    margin-top:50px;
+    margin-left:30%;
+}
+
+.rodape_font_normal{
+    font-size:12px;
+    margin-bottom:50px;
+    margin-left:30%;
+}
+#myCarousel{
+
+  
+}

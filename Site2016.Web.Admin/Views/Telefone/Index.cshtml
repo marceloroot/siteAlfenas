@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_MasterPageAdmin.cshtml";
+   
+}
+<script src="~/js/jquery2.1.4.min.js"></script>
+<script src="~/js/angular.js"></script>
+<script src="~/scripts/tinymce/jquery.tinymce.min.js"></script>
+<script src="~/scripts/tinymce/tinymce.min.js"></script>
+<script src="~/scripts/tinymce/plugins/advlist/plugin.min.js"></script>
+<script src="~/scripts/tinymce/plugins/image/plugin.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
+
+<script>
+    var myevents = angular.module('myeventsApp', []);
+
+    myevents.controller("CadastraControllerJS", function ($scope) {
+        var s = '@Html.Raw(@ViewBag.sec.Nome)';
+        if (s == "")
+        {
+            $scope.view = false;
+        }
+        else
+        {
+            $scope.view = true;
+        }
+
+        $scope.secretaria = s;
+    });
+</script>
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-app="myeventsApp" ng-controller="CadastraControllerJS">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg></a></li>
+            <li class="active">Cadastra Telefones</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cadastro de Telefone</h1>
+            <h5 class="page-header">@ViewBag.erro </h5>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Telefone</div>
+                <div class="panel-body">
+                    <div class="col-md-8">
+
+                        @using (Html.BeginForm("Index", "Telefone", null, FormMethod.Post, new { name = "frm", id = "frm" }))
+                        {
+                            <h3 class="text-info">Escolha uma Secretaria </h3>
+                            
+                              
+                                <input name="idsec" id="idsec" class="form-control" required="required" style="visibility:hidden;" value="@ViewBag.sec.Id">
+                           
+                            <div class="form-group">
+                                <label>Secretaria</label>
+                                <input name="secretaria" id="secretaria" class="form-control" readonly="readonly" ng-model="secretaria"/>
+                            </div>
+
+                            <table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="id">
+                                <thead>
+                                    <tr>
+
+                                        <th data-field="vinculo">Vincular </th>
+                                        <th data-field="id" data-sortable="true">ID</th>
+                                        <th data-field="titulo" data-sortable="true">Nome</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var variavel in ViewBag.Secretaria)
+                                    {
+                                        <tr>
+
+                                            <td data-field="vinculo"><a href="@Url.Action("Index", "Telefone", new { id = variavel.Id })" id="copiar" name="copiar">Vincular</a></td>
+
+                                            <td data-field="id" data-sortable="true" id="uni" name="uni">@variavel.Id</td>
+                                            <td data-field="titulo" data-sortable="true">@variavel.Nome</td>
+
+
+
+
+                                        </tr>
+
+
+                                    }
+
+                                </tbody>
+                            </table>
+
+
+                            <div class="form-group">
+                                <label>Numero Telefone</label>
+                                <input name="numero" id="numero" class="form-control" placeholder="Numero" required="required">
+                            </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary" ng-show="{{view}}" ng-model="btn">Cadastrar Telefone</button>
+
+                        }
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/chart.min.js"></script>
+<script src="~/js/chart-data.js"></script>
+<script src="~/js/easypiechart.js"></script>
+<script src="~/js/easypiechart-data.js"></script>
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-table.js"></script>
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+</script>

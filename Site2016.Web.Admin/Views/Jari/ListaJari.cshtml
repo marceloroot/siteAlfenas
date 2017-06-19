@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "ListaJari";
+    Layout = "~/Views/_MasterPageAdmin.cshtml";
+}
+script src="~/scripts/tinymce/plugins/image/plugin.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+            <li class="active">Buscar Jari</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Alterar Jari</h1>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Lista de Jari</div>
+                <div class="panel-body">
+                    <table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="id">
+                        <thead>
+                            <tr>
+                                <th data-field="state">Editar Jari</th>
+                                <th data-field="excluir">Excluir Jari</th>
+                                <th data-field="stateImg">Editar Arquivo</th>
+
+                                <th data-field="id" data-sortable="true">ID</th>
+                                <th data-field="titulo" data-sortable="true">Titulo</th>
+                                <th data-field="data" data-sortable="true">Data Publicação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var variavel in ViewBag.Jari)
+                            {
+                                <tr>
+                                    <td data-field="state"><a href="@Url.Action("AlterarJari", "Jari", new { idJari = variavel.Id })">Editar</a></td>
+                                    <td data-field="excluir"><a data-toggle="modal" data-target="#@variavel.Id">Excluir</a>
+                                    <td data-field="stateImg"><a href="@Url.Action("AlterarArquivo", "Jari", new { idJari = variavel.Id })">Editar</a></td>
+                                    <td data-field="id" data-sortable="true">@variavel.Id</td>
+                                    <td data-field="titulo" data-sortable="true">@variavel.Descricao</td>
+                                    <td data-field="data" data-sortable="true">@variavel.DataPublicacao.ToShortDateString()</td>
+
+                                    <div id="@variavel.Id" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Excluir Secretaria</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Você deseja realmente Excluir essa secretaria.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="@Url.Action("Excluir", "Jari", new { idJari = variavel.Id })" class="btn btn-default">Excluir</a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/.row-->
+
+
+
+</div><!--/.main-->
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/chart.min.js"></script>
+<script src="~/js/chart-data.js"></script>
+<script src="~/js/easypiechart.js"></script>
+<script src="~/js/easypiechart-data.js"></script>
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-table.js"></script>
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+</script>	
+

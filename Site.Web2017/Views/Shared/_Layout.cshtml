@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Prefeitura de Alfenas</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+        <link rel="stylesheet" href="~/css/Estilo.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+
+        <link rel="stylesheet" href="~/css/Estilo.min.css" asp-append-version="true" />
+    </environment>
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+</head>
+<body>
+
+    <div class="container">
+        <div class="row" id="topo">
+
+
+            <div class="col-lg-3 col-md-3 col-xs-12 ">
+                <p> www.brasil.gov.br | www.mg.gov.br</p>
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                <h4 class="pull-right">Participe | Serviços | Legislação | Canais <img src="~/images/Home/site prefeitura.png" alt="transparencia" title="transparencia" /></h4>
+            </div>
+
+
+        </div>
+
+
+        <div class="row" id="menu">
+
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12" id="brasao">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <img src="~/images/Home/brasão alfenas.png" alt="brasão" title="brasao" />
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="margin-top:9%;">
+                    <span>PREFEITURA DE ALFENAS</span>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-5 col-xs-12 pull-right" id="menuBrasao">
+                <div class="row pull-right">
+                    <div class="col-lg-12 col-md-12 margintop8">
+                        <span><a>ACESSIBILIDADE</a> &emsp;  <a>ALTO CONTRASTE</a> &emsp;     <a>MAPA DO SITE</a>  </span>
+                        <span style="text-decoration:none !important;"> &emsp;   &emsp;   &emsp;  &emsp;</span>  <span><a>OUVIDORIA</a> &emsp; <a>IMPREMSA</a></span>
+                    </div>
+                </div>
+                <div class="row pull-right">
+                    <div class="col-lg-6 col-md-6  pull-right" style="margin-top:50px; margin-bottom:10px;">
+                        <div class="input-group">
+
+                            <input type="text" class="form-control" placeholder="Buscar">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <img src="~/images/Home/lupa de busca.png" alt="lupa" title="lupa" />
+                                </button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div>
+                </div>
+                <div class="row pull-right">
+                    <div class="col-lg-12 col-md-12">
+                        <img src="~/images/Home/1.png" />
+                        <img src="~/images/Home/2.png" />
+                        <img src="~/images/Home/3.png" />
+                        <img src="~/images/Home/4.png" />
+                        <img src="~/images/Home/5.png" />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row" id="subMenu">
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+               <span>Tamanho do texto</span>
+                <a> <img src="~/images/Home/A maior.png" alt="aumenta" title="aumenta" /></a>
+                <a> <img src="~/images/Home/A médio.png" alt="normaliza" title="normaliza" /></a>
+                <a> <img src="~/images/Home/A pequeno.png" alt="diminui" title="diminui" /></a>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 menusub">
+                <a class="pull-right">História</a> 
+                <a class="pull-right">Hino do Municipio</a>
+                <a class="pull-right">Fotos do Municipio</a>
+                <a class="pull-right">Perguntas Frequentes</a> 
+               
+              
+             
+            </div>
+
+        </div>
+      
+
+
+        @RenderBody()
+      
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12" id="rodape">
+
+                <div class="col-lg-2 col-md-2 col-xs-12 linhavertical">
+                    <p><a><strong> Municipio</strong></a></p>
+                    <p> <a>Governo</a></p>
+                    <p>  <a> Procuradoria</a></p>
+                    <p> <a>  Controladoria</a></p>
+                    <p> <a>  Gabinete</a></p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-12 linhavertical">
+                    <p><a><strong>  Secretarias</strong></a></p>
+                    <p> <a>Governo</a></p>
+                    <p>  <a> Administração</a></p>
+                    <p> <a>  Agricultura</a></p>
+                    <p> <a>  Ação Social</a></p>
+                    <p> <a>  Defesa Social</a></p>
+                    <p> <a>  D. Econômico</a></p>
+                    <p> <a>  Educação e Cultura</a></p>
+                    <p> <a>  Esporte</a></p>
+                    <p> <a>  Fazenda</a></p>
+                    <p> <a>  Habitação</a></p>
+                    <p> <a>  Juventude e Turismo</a></p>
+                    <p> <a>  Meio Ambiente</a></p>
+                    <p> <a>  Obras</a></p>
+                    <p> <a>  Planejamento</a></p>
+                    <p> <a>  Saúde</a></p>
+                    <p> <a>  Ouvidoria</a></p>
+
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-12 linhavertical">
+                    <p><a><strong>Serviços</strong></a></p>
+                    <p> <a>  Fale com o Governo</a></p>
+                    <p>  <a> Perguntas frequentes</a></p>
+                    <p> <a> Relatar erros</a></p>
+                    <p> <a> Impresa</a></p>
+                    <p> <a> Brasão</a></p>
+                    <p> <a> História</a></p>
+                    <p> <a> Ouvidoria</a></p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-12 linhavertical">
+                    <p><a><strong>Redes Sociais</strong></a></p>
+                    <p> <a> Facebook</a></p>
+                    <p> <a> Youtube</a></p>
+                    <p> <a> Twitter</a></p>
+                    <p> <a> Flickr</a></p>
+                    <p> <a> Instagram</a></p>
+                    <p> <a> Google +</a></p>
+                    <p> <a> Regras de uso</a></p>
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-12 linhavertical">
+                    <p><a><strong>Navegação</strong></a></p>
+                    <p> <a> Acessesibilidade</a></p>
+                    <p> <a> Mapa do site</a></p>
+                    <br />
+                    <p><a><strong>RSS</strong></a></p>
+                    <p> <a> Acessesibilidade</a></p>
+                    <p> <a> Mapa do site</a></p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-12 cantoRodape pull-right">
+
+                    <hr class="linhahorizontal" />
+                    <center>
+                        <a>Fotografias</a>
+                        <img src="~/images/Home/fotografica rodape.png" alt="fotografia rodape" title="fotografia rodape" />
+                    </center>
+
+                    <hr class="linhahorizontal" />
+                    <center>
+                        <a>Audios</a>
+                        <img src="~/images/Home/áudio rodape.png" alt="audio rodape" title="audio rodape" />
+                    </center>
+
+                    <hr class="linhahorizontal" />
+                    <center>
+                        <a>Videos</a>
+                        <img src="~/images/Home/videos rodape.png" alt="audio rodape" title="audio rodape" />
+                    </center>
+
+
+                    <hr class="linhahorizontal" />
+                    <center>
+                        <a>Comunicação</a>
+                        <img src="~/images/Home/comunicação rodape.png" alt="audio rodape" title="audio rodape" />
+                    </center>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="row" id="subMenuRodape">
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                <img src="~/images/Home/site prefeitura.png" alt="transparencia" title="transparencia" />
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                <img src="~/images/Home/you tube rodape 5.png" alt="youtube" title="youtube" class="pull-right" />
+                <img src="~/images/Home/apple rodape 4.png" class="pull-right" alt="apple" title="apple"/>
+                <img src="~/images/Home/windows 3.png" class="pull-right" />
+                <img src="~/images/Home/android rodape.png" class="pull-right" alt="android" title="android" />
+                <img src="~/images/Home/trip rodape.png" class="pull-right" alt="trip" title="trip" />
+        
+  
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

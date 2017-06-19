@@ -1,0 +1,81 @@
+﻿@using PagedList.Mvc
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Telefones";
+    Layout = "~/Views/_MasterPrincipal.cshtml";
+    var telefone = ViewBag.telefones;
+}
+
+
+
+
+
+
+
+<div class="row alinhar_conteudo" style="margin-bottom:30px;">
+
+
+
+    <!--TELEFONES-->
+    @using (Html.BeginForm("Telefones", "Home", FormMethod.Post))
+    {
+        <div class="row">
+
+            <div class="col-md-11 col-lg-11 col-sm-11  col-lg-offset-1  font_telefones alinhar_esquerda_telefone" style="margin-left:6%">
+
+                <div class="font_destaque bg_faixa col-lg-11 col-md-11 col-sm-11">
+                    <span class="h3" style="margin-bottom:30px; margin-top:30px;">Telefones</span>
+                </div>
+                <br />
+
+                <div class="col-lg-11 col-md-11 col-sm-11" style="margin-top:30px;">
+
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search" name="search" placeholder="Digite o titulo da publicação">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Buscar</button>
+                        </span>
+                    </div><!-- /input-group -->
+
+                </div>
+
+                <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-lg-4">Setor</th>
+                                <th class="col-lg-5">Endereço</th>
+                                <th class="col-lg-2">Telefone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var variavel in telefone)
+                            {
+                                <tr>
+                                    <td class="col-lg-4">@variavel.SecretariaUnica.Nome</td>
+                                    <td class="col-lg-5">@variavel.SecretariaUnica.Endereco</td>
+                                    <td class="col-lg-2">@variavel.Numero</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    }
+
+    <div class="col-md-11 col-lg-11 col-sm-11  col-lg-offset-1  font_telefones alinhar_esquerda_telefone" style="margin-left:6%">
+        Pagina @ViewBag.telefones.PageNumber de @ViewBag.telefones.PageCount
+
+        @Html.PagedListPager((PagedList.PagedList<Site2016.Dominio.Telefone>)ViewBag.telefones, page => Url.Action("Telefones", new { pagina = page }))
+    </div>
+</div>

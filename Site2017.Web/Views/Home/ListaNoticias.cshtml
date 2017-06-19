@@ -1,0 +1,74 @@
+﻿@using PagedList.Mvc
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "ListaNoticias";
+    Layout = "~/Views/_MasterPrincipal.cshtml";
+    var listaNoticias = ViewBag.Noticias;
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.9.1.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    
+}
+
+    @using (Html.BeginForm("ListaNoticias", "Home", FormMethod.Post))
+    {
+
+        <div class="col-lg-12 col-md-12 col-sm-12" style="background-color:#012B43; margin-bottom:20px; margin-top:20px; height:60px;">
+            <span class="h3" style=" float:left; margin-top:14px; margin-bottom:10px; margin-left:319px; color:white;    font-family: Verdana, Arial, Helvetica, sans-serif; font-weight:bold; font-size:30px;">Notícias</span>
+        </div>
+        <br />
+        <center>
+            <div class="row" style="margin-left:20%;">
+                <div class="col-md-10 col-lg-10 col-sm-10">
+
+
+                    <div class="col-md-11 col-lg-11 col-sm-11" style="margin-top:10px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="search" name="search" placeholder="Digite o titulo da publicação">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Buscar</button>
+                            </span>
+                        </div><!-- /input-group -->
+
+                    </div>
+
+                    <!--Tabela 1-->
+                    <div class="col-md-11 col-lg-11 col-sm-11" style="margin-top:10px;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-lg-2">Data Publicacão</th>
+                                    <th class="col-lg-8">Titulo</th>
+                                    <th class="col-lg-1">Ver +</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var variavel in listaNoticias)
+                                {
+                                    <tr>
+                                        <td class="col-lg-2">@variavel.DataPublicacao.ToShortDateString()</td>
+                                        <td class="col-lg-8">@variavel.Titulo</td>
+                                        <td class="col-lg-1"><a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })"><span class="glyphicon glyphicon-search col-lg-12" aria-hidden="true"></span></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </center>
+
+    }
+<center>
+    Pagina @ViewBag.Noticias.PageNumber de @ViewBag.Noticias.PageCount
+
+    @Html.PagedListPager((PagedList.PagedList<Site2016.Dominio.Noticia>)ViewBag.Noticias, page => Url.Action("ListaNoticias", new { pagina = page }))
+</center>

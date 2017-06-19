@@ -1,0 +1,203 @@
+﻿@using PagedList.Mvc
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Jari";
+    Layout = "~/Views/_MasterPrincipal.cshtml";
+}
+
+
+   
+
+      
+       
+        <div class="row">
+            <div class="col-md-11 col-lg-11 col-sm-11  col-lg-offset-1  e" style="margin-left:6%">
+
+                <div class="col-lg-12 col-md-12 col-sm-12" style="background-color:#012B43; margin-bottom:20px; margin-top:20px; height:60px;">
+                    <span class="h3" style=" float:left; margin-top:14px; margin-bottom:10px; margin-left:249px; color:white;    font-family: Verdana, Arial, Helvetica, sans-serif; font-weight:bold; font-size:30px;">Modelo de Requerimento de Recurso - JARI</span>
+                </div>
+                <br />
+
+               
+
+                <!-- tabela 1-->
+                <div class="col-md-11 col-lg-11 col-sm-11  " style="margin-top:10px;">
+                    <div class="alert alert-info">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        Notificação de autuação não recebida
+                    </div>
+                    <!-- Noticação de atuação nao recebida-->
+                    <div class="col-md-11 col-lg-11 col-sm-11  " style="margin-top:10px;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-lg-2">DATA</th>
+                                    <th class="col-lg-8">DESCRIÇÃO DO DOCUMENTO</th>
+                                    <th class="col-lg-1">DOWNLOAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var variavel in ViewBag.NotAtNaoRecebida)
+                                {
+                                    <tr>
+                                        <td class="col-lg-2">@variavel.DataPublicacao.ToShortDateString()</td>
+                                        <td class="col-lg-8">@variavel.Descricao</td>
+                                        <td class="col-lg-1"><a href="~/Admin/Uploads/ArqJari/@variavel.ArquivoUnico.Caminho"><span class="glyphicon glyphicon-search col-lg-12" aria-hidden="true"></span></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- Tabela 2 Notificação de penalidade não recebida-->
+
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+                        <div class="alert alert-info">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Notificação de Penalidade não recebida
+                        </div>
+                    </div>
+                    <!-- Noticação de atuação nao recebida-->
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-lg-2">DATA</th>
+                                    <th class="col-lg-8">DESCRIÇÃO DO DOCUMENTO</th>
+                                    <th class="col-lg-1">DOWNLOAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var variavel in ViewBag.NotPenaNaoRecebida)
+                                {
+                                    <tr>
+                                        <td class="col-lg-2">@variavel.DataPublicacao.ToShortDateString()</td>
+                                        <td class="col-lg-8">@variavel.Descricao</td>
+                                        <td class="col-lg-1"><a href="~/Admin/Uploads/ArqJari/@variavel.ArquivoUnico.Caminho"><span class="glyphicon glyphicon-search col-lg-12" aria-hidden="true"></span></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <!-- Tabela 3 Defesa da Autuação Acolhida-->
+
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+                        <div class="alert alert-info">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Defesa da Autuação Acolhida
+                        </div>
+
+                    </div>
+                    <!-- Noticação de atuação nao recebida-->
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-lg-2">DATA</th>
+                                    <th class="col-lg-8">DESCRIÇÃO DO DOCUMENTO</th>
+                                    <th class="col-lg-1">DOWNLOAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var variavel in ViewBag.DefesaAtuAcolhida)
+                                {
+                                    <tr>
+                                        <td class="col-lg-2">@variavel.DataPublicacao.ToShortDateString()</td>
+                                        <td class="col-lg-8">@variavel.Descricao</td>
+                                        <td class="col-lg-1"><a href="~/Admin/Uploads/ArqJari/@variavel.ArquivoUnico.Caminho"><span class="glyphicon glyphicon-search col-lg-12" aria-hidden="true"></span></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <!-- Tabela 4 *Defesa da Atuação não Acolhilda-->
+
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+                        <div class="alert alert-info">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Defesa da Autuação não Acolhida
+                        </div>
+
+                    </div>
+                    <!-- Noticação de atuação nao recebida-->
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-lg-2">DATA</th>
+                                    <th class="col-lg-8">DESCRIÇÃO DO DOCUMENTO</th>
+                                    <th class="col-lg-1">DOWNLOAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var variavel in ViewBag.DefesaAtuNaoAcolhida)
+                                {
+                                    <tr>
+                                        <td class="col-lg-2">@variavel.DataPublicacao.ToShortDateString()</td>
+                                        <td class="col-lg-8">@variavel.Descricao</td>
+                                        <td class="col-lg-1"><a href="~/Admin/Uploads/ArqJari/@variavel.ArquivoUnico.Caminho"><span class="glyphicon glyphicon-search col-lg-12" aria-hidden="true"></span></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- Tabela 5 Decisões da JARI-->
+
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+
+                        <div class="alert alert-info">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Decisões da JARI
+                        </div>
+                    </div>
+                    <!-- Noticação de atuação nao recebida-->
+                    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-top:10px;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-lg-2">DATA</th>
+                                    <th class="col-lg-8">DESCRIÇÃO DO DOCUMENTO</th>
+                                    <th class="col-lg-1">DOWNLOAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var variavel in ViewBag.Desicao)
+                                {
+                                    <tr>
+                                        <td class="col-lg-2">@variavel.DataPublicacao.ToShortDateString()</td>
+                                        <td class="col-lg-8">@variavel.Descricao</td>
+                                        <td class="col-lg-1"><a href="~/Admin/Uploads/ArqJari/@variavel.ArquivoUnico.Caminho"><span class="glyphicon glyphicon-search col-lg-12" aria-hidden="true"></span></a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+            <center>
+                Pagina @ViewBag.NotAtNaoRecebida.PageNumber de @ViewBag.NotAtNaoRecebida.PageCount
+
+                @Html.PagedListPager((PagedList.PagedList<Site2016.Dominio.Jari>)ViewBag.NotAtNaoRecebida, page => Url.Action("Jari", new { pagina = page }))
+            </center>
+            </div>

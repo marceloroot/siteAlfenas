@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_MasterPageAdmin.cshtml";
+}
+
+<script src="~/scripts/tinymce/jquery.tinymce.min.js"></script>
+<script src="~/scripts/tinymce/tinymce.min.js"></script>
+<script src="~/scripts/tinymce/plugins/advlist/plugin.min.js"></script>
+<script src="~/scripts/tinymce/plugins/image/plugin.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
+
+<!-- Script to wire up your TinyMCE editor -->
+<script type="text/javascript">
+
+    tinymce.init({
+        selector: 'textarea',
+        height: 300,
+        theme: 'modern',
+        plugins: [
+          'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+          'searchreplace wordcount visualblocks visualchars code fullscreen',
+          'insertdatetime media nonbreaking save table contextmenu directionality',
+          'emoticons template paste textcolor colorpicker textpattern imagetools'
+        ],
+        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        toolbar2: 'print preview media | forecolor backcolor emoticons',
+        image_advtab: true,
+        templates: [
+          { title: 'Test template 1', content: 'Test 1' },
+          { title: 'Test template 2', content: 'Test 2' }
+        ],
+        content_css: [
+          '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+          '//www.tinymce.com/css/codepen.min.css'
+        ]
+    });
+</script>
+
+
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg></a></li>
+            <li class="active">Cadastra Banner</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cadastro de Banner</h1>
+            <h5 class="page-header">@ViewBag.erro </h5>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Banners</div>
+                <div class="panel-body">
+                    <div class="col-md-8">
+
+                        @using (Html.BeginForm("Index", "Banner", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="form-group">
+                                <label>Titulo</label>
+                                <input name="titulo" id="titulo" class="form-control" placeholder="Titulo">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Corpo</label>
+                                <textarea name="corpo" id="corpo" class="form-control"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fotos</label>
+                                <input type="file" class="multi" id="up" name="up" accept="image/*" multiple />
+                                <p class="help-block">Arquivos do tipo imagem e no maximo 1 MB.</p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Cadastrar Banner</button>
+                            <button type="reset" class="btn btn-default">Limpar Campos</button>
+                        }
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->
+
+
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/chart.min.js"></script>
+<script src="~/js/chart-data.js"></script>
+<script src="~/js/easypiechart.js"></script>
+<script src="~/js/easypiechart-data.js"></script>
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-table.js"></script>

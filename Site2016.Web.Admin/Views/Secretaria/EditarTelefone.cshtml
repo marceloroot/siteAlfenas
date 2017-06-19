@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "EditarTelefone";
+    Layout = "~/Views/_MasterPageAdmin.cshtml";
+}
+
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
+
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-app="myeventsApp" ng-controller="CadastraControllerJS">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg></a></li>
+            <li class="active">Destacar Telefones</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Destacar de Telefone</h1>
+            <h5 class="page-header">@ViewBag.erro </h5>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Telefones</div>
+                <div class="panel-body">
+                    <div class="col-md-8">
+
+
+
+
+
+                        <div class="alert alert-info">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            Telefenos da secretaria/setor de @ViewBag.Secretaria.Nome
+                        </div>
+
+                        <table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="id">
+                            <thead>
+                                <tr>
+
+                                    <th data-field="vinculo">Destacar </th>
+                                    <th data-field="id" data-sortable="true">ID</th>
+                                    <th data-field="numero" data-sortable="true">Numero</th>
+                                    <th data-field="titulo" data-sortable="true">Destaque</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    foreach (var variavel in ViewBag.Telefone)
+                                    {
+                                        <tr>
+
+                                            <td data-field="vinculo"><a href="@Url.Action("DestacarTel", "Secretaria", new { idTel = variavel.Id, idSec = @ViewBag.Secretaria.Id })" id="copiar" name="copiar">Destacar</a></td>
+
+                                            <td data-field="id" data-sortable="true" id="uni" name="uni">@variavel.Id</td>
+                                            <td data-field="numero" data-sortable="true">@variavel.Numero</td>
+                                            @if (variavel.destaque == true)
+                                            {
+                                                <td data-field="titulo" data-sortable="true">Principal</td>
+                                            }
+                                            else
+                                            {
+
+                                                <td data-field="titulo" data-sortable="true">Comum</td>
+                                            }
+
+
+                                        </tr>
+
+
+                                    }
+
+                                }
+
+
+
+                            </tbody>
+                        </table>
+
+
+
+
+                     
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->
+</div><!--/.main-->
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/chart.min.js"></script>
+<script src="~/js/chart-data.js"></script>
+<script src="~/js/easypiechart.js"></script>
+<script src="~/js/easypiechart-data.js"></script>
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-table.js"></script>
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+</script>
+
+

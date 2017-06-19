@@ -1,0 +1,371 @@
+﻿@model Site2016.Dominio.Noticia
+@{
+    ViewBag.Title = "Alfenas";
+    Layout = "~/Views/_MasterPrincipal.cshtml";
+    var ListaBanner = ViewBag.Banner;
+    var ListaBanner2 = ViewBag.Banner2;
+    var Noticias = ViewBag.Noticia;
+
+    int countBanner = 0;
+    var urlHelper = new UrlHelper(Html.ViewContext.RequestContext);
+    var baseurl = urlHelper.Content("~");
+    <link href="~/Content/estilo.css" rel="stylesheet" />
+    <script src="~/Scripts/jssor.slider.min.js"></script>
+    <script>
+        $(function () {
+            $(".limit").each(function (i) {
+                var text = $(this).text();
+                var len = text.length;
+                if (len > 90) {
+                    var query = text.split(" ", 10);
+                    query.push('...');
+                    res = query.join(' ');
+                    $(this).text(res);
+                }
+            });
+        });
+
+    </script>
+}
+
+<div class="container" style="margin-bottom:20px;">
+
+
+
+    <div class="row" style="margin-top:10px; margin-bottom:3px;">
+
+        <div class="col-lg-3" >
+            <div class="list-group">
+                <a href="#" class="list-group-item disabled list-group-item-heading ">
+                    Acesso à informação
+                </a>
+               
+                <a href="http://pregao.alfenas.mg.gov.br/" class="list-group-item">Licitações e Pregões</a>
+                <a href="@Url.Action("Jari", "Home")" class="list-group-item">Editais Jari</a>
+                <a href="https://e-gov.betha.com.br/servidorpublico/login.faces;jsessionid=9E738DE6FBC4FB156ACE53260FF112B1.p0node6" class="list-group-item">Acesso do Servidor Público </a>
+                <a href="@Url.Action("AreaAzul", "Home")" class="list-group-item">Leis do Edital da Area Azul</a>
+                <a href="@Url.Action("Saneamento", "Home")" class="list-group-item">Normas de Saneamento</a>
+                <a href="~/Arquivos/TermoCon/termo.pdf" class="list-group-item">Termo de solicitação</a>
+                <a href="@Url.Action("EmissaoAlvara", "Home")" class="list-group-item">Emissão do alvará</a>
+                <a href="@Url.Action("AreaAzul", "Home")" class="list-group-item">Leis do Edital da Area Azul</a>
+                <a href="@Url.Action("TermoConstrucao", "Home")" class="list-group-item">Normas para Construção</a>
+                <a href="~/Arquivos/TermoCon/termo.pdf" class="list-group-item">Termo de solicitação</a>
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-9">
+
+            <div id="myCarousel" class="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                    @foreach (var variavel in ListaBanner)
+                    {
+
+
+
+                        foreach (var listaimagem in variavel.ListImagem)
+                        {
+                            if (listaimagem.Destaque == true)
+                            {
+                                if (countBanner == 0)
+                                {
+                                    <div class="item active">
+
+                                        <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })"><img src="~/Admin/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" style="width:1300px; height:450px;"></a>
+                                       <!-- <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })"><img src="http://localhost:17109/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" style="width:1300px; height:460px;"></a>-->
+                                        <div class="carousel-caption">
+                                            <h3 class="text-danger">@variavel.Titulo</h3>
+                                            
+                                        </div>
+                                    </div>
+
+                                   
+
+                                    countBanner++;
+                                }
+                                else
+                                {
+                                    <div class="item">
+
+                                        <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })"><img src="~/Admin/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" style="width:1300px; height:450px;"></a>
+                                       <!--<a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })"><img src="http://localhost:17109/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" style="width:1300px; height:460px;"></a>--> 
+                                    
+                                        <div class="carousel-caption">
+                                            <h3 class="text-uppercase text-danger">@variavel.Titulo</h3>
+
+                                        </div>
+                                    </div>
+
+                                }
+
+
+                                break;
+                            }
+                        }
+
+
+
+                    }
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+
+                    <span class="icon-next"></span>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+       
+
+
+
+    </div>
+
+    <!--Banner 2 menor-->
+    <div class="row">
+        
+        <div class="col-lg-12 col-md-12 col-sm-12" >
+
+            <!-- use jssor.slider.debug.js instead for debug -->
+            <script>
+                jssor_1_slider_init = function () {
+
+                    var jssor_1_options = {
+                        $AutoPlay: true,
+                        $AutoPlaySteps: 4,
+                        $SlideDuration: 160,
+                        $SlideWidth: 200,
+                        $SlideSpacing: 3,
+                        $Cols: 4,
+                        $ArrowNavigatorOptions: {
+                            $Class: $JssorArrowNavigator$,
+                            $Steps: 4
+                        },
+                        $BulletNavigatorOptions: {
+                            $Class: $JssorBulletNavigator$,
+                            $SpacingX: 1,
+                            $SpacingY: 1
+                        }
+                    };
+
+                    var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+                    //responsive code begin
+                    //you can remove responsive code if you don't want the slider scales while window resizing
+                    function ScaleSlider() {
+                        var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                        if (refSize) {
+                            refSize = Math.min(refSize, 1140);
+                            jssor_1_slider.$ScaleWidth(refSize);
+                        }
+                        else {
+                            window.setTimeout(ScaleSlider, 30);
+                        }
+                    }
+                    ScaleSlider();
+                    $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                    $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                    $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                    //responsive code end
+                };
+            </script>
+
+            <style>
+                /* jssor slider bullet navigator skin 03 css */
+                /*
+                    .jssorb03 div           (normal)
+                    .jssorb03 div:hover     (normal mouseover)
+                    .jssorb03 .av           (active)
+                    .jssorb03 .av:hover     (active mouseover)
+                    .jssorb03 .dn           (mousedown)
+                    */
+                .jssorb03 {
+                    position: absolute;
+                }
+
+                    .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av {
+                        position: absolute;
+                        /* size of bullet elment */
+                        width: 21px;
+                        height: 21px;
+                        text-align: center;
+                        line-height: 21px;
+                        color: white;
+                        font-size: 12px;
+                        background: url('img/b03.png') no-repeat;
+                        overflow: hidden;
+                        cursor: pointer;
+                    }
+
+                    .jssorb03 div {
+                        background-position: -5px -4px;
+                    }
+
+                        .jssorb03 div:hover, .jssorb03 .av:hover {
+                            background-position: -35px -4px;
+                        }
+
+                    .jssorb03 .av {
+                        background-position: -65px -4px;
+                    }
+
+                    .jssorb03 .dn, .jssorb03 .dn:hover {
+                        background-position: -95px -4px;
+                    }
+
+                /* jssor slider arrow navigator skin 03 css */
+                /*
+                    .jssora03l                  (normal)
+                    .jssora03r                  (normal)
+                    .jssora03l:hover            (normal mouseover)
+                    .jssora03r:hover            (normal mouseover)
+                    .jssora03l.jssora03ldn      (mousedown)
+                    .jssora03r.jssora03rdn      (mousedown)
+                    */
+                .jssora03l, .jssora03r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 55px;
+                    height: 55px;
+                    cursor: pointer;
+                    background: url('img/a03.png') no-repeat;
+                    overflow: hidden;
+                }
+
+                .jssora03l {
+                    background-position: -3px -33px;
+                }
+
+                .jssora03r {
+                    background-position: -63px -33px;
+                }
+
+                .jssora03l:hover {
+                    background-position: -123px -33px;
+                }
+
+                .jssora03r:hover {
+                    background-position: -183px -33px;
+                }
+
+                .jssora03l.jssora03ldn {
+                    background-position: -243px -33px;
+                }
+
+                .jssora03r.jssora03rdn {
+                    background-position: -303px -33px;
+                }
+            </style>
+
+
+            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 900px; height: 100px; overflow: hidden; visibility: hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                    <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                </div>
+                <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1250px; height: 100px; overflow: hidden;">
+
+
+                    @foreach (var variavel in ListaBanner2)
+                    {
+                        foreach (var listaimagem in variavel.ListImagem)
+                        {
+                            if (listaimagem.Destaque == true)
+                            {
+                                <div style="display: none;">
+                                    <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })">
+                                       <img data-u="image" src="~/Admin/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" />
+                                       <!-- <img data-u="image" src="http://localhost:17109/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" />-->
+                                    </a>
+                                  
+                                         <p  text-align:center;">@variavel.Titulo</p>
+                                
+
+                                </div>
+                            }
+                        }
+                    }
+
+
+
+
+                </div>
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
+                    <!-- bullet navigator item prototype -->
+                    <div data-u="prototype" style="width:21px;height:21px;">
+                        <div data-u="numbertemplate"></div>
+                    </div>
+                </div>
+                <!-- Arrow Navigator -->
+                <span data-u="arrowleft" class="jssora03l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora03r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
+            </div>
+            <script>
+                jssor_1_slider_init();
+            </script>
+
+
+            <!--<img class="img-responsive" src="~/IMG/Home/banner_editais.jpg" />-->
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-bottom:10px;">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <!--repeat noticias-->
+            @foreach (var variavel in Noticias)
+            {
+                <div class="col-lg-3 col-md-3 col-sm-3">
+
+                    <br />
+
+                    @foreach (var listaimagem in variavel.ListImagem)
+                    {
+                        if (listaimagem.Destaque == true)
+                        {
+                              <img class="img-responsive img_grupos" src="~/Admin/Uploads/Img/@listaimagem.Caminho" style="width:200px; height:150px;" alt="@listaimagem.Nome" />
+                            <!-- <img class="img-responsive img_grupos" src="http://localhost:17109/Uploads/Img/@listaimagem.Caminho" style="width:200px; height:150px;" alt="@listaimagem.Nome" />-->
+                            break;
+                        }
+                    }
+
+                    <div><p class="titulo">@variavel.Titulo</p></div>
+
+
+
+
+                    <div style="text-justify:auto;"> <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })">+ ver mais</a> </div>
+
+                </div>
+            }
+            <!-- FIm Repeat noticias-->
+
+        </div>
+    </div>
+
+</div>

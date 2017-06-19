@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCD410B0-EA23-4F44-AF25-B86FED8B3C64}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Site2017.Web</RootNamespace>
+    <AssemblyName>Site2017.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\bx_loader.gif" />
+    <Content Include="images\controls.png" />
+    <Content Include="images\manutencao.jpg" />
+    <Content Include="images\secc_r2_c2.jpg" />
+    <Content Include="images\secretariashomeover_r1_c1.jpg" />
+    <Content Include="images\secretariashomeover_r2_c1.jpg" />
+    <Content Include="images\secretariashomeover_r2_c2.jpg" />
+    <Content Include="images\secretariashomeover_r2_c3.jpg" />
+    <Content Include="images\secretariashomeover_r2_c4.jpg" />
+    <Content Include="images\secretariashomeover_r2_c5.jpg" />
+    <Content Include="images\secretariashomeover_r2_c6.jpg" />
+    <Content Include="images\secretariashomeover_r2_c7.jpg" />
+    <Content Include="images\secretariashomeover_r3_c2.jpg" />
+    <Content Include="images\secretariashomeover_r3_c5.jpg" />
+    <Content Include="images\secretariashomeover_r4_c2.jpg" />
+    <Content Include="images\secretariashomeover_r4_c3.jpg" />
+    <Content Include="images\secretariashomeover_r4_c5.jpg" />
+    <Content Include="images\secretariashomeover_r4_c6.jpg" />
+    <Content Include="images\secretariashomeover_r5_c2.jpg" />
+    <Content Include="images\secretariashomeover_r5_c5.jpg" />
+    <Content Include="images\secretariashomeover_r6_c2.jpg" />
+    <Content Include="images\secretariashomeover_r6_c3.jpg" />
+    <Content Include="images\secretariashomeover_r6_c5.jpg" />
+    <Content Include="images\secretariashomeover_r6_c6.jpg" />
+    <Content Include="images\secretariashomeover_r7_c2.jpg" />
+    <Content Include="images\secretariashomeover_r7_c5.jpg" />
+    <Content Include="images\secretariashomeover_r8_c2.jpg" />
+    <Content Include="images\secretariashomeover_r8_c3.jpg" />
+    <Content Include="images\secretariashomeover_r8_c5.jpg" />
+    <Content Include="images\secretariashomeover_r8_c6.jpg" />
+    <Content Include="images\secretariashomeover_r9_c1.jpg" />
+    <Content Include="images\secretariashome_r1_c1.jpg" />
+    <Content Include="images\secretariashome_r2_c1.jpg" />
+    <Content Include="images\secretariashome_r2_c2.jpg" />
+    <Content Include="images\secretariashome_r2_c3.jpg" />
+    <Content Include="images\secretariashome_r2_c4.jpg" />
+    <Content Include="images\secretariashome_r2_c5.jpg" />
+    <Content Include="images\secretariashome_r2_c6.jpg" />
+    <Content Include="images\secretariashome_r2_c7.jpg" />
+    <Content Include="images\secretariashome_r3_c2.jpg" />
+    <Content Include="images\secretariashome_r3_c5.jpg" />
+    <Content Include="images\secretariashome_r4_c2.jpg" />
+    <Content Include="images\secretariashome_r4_c3.jpg" />
+    <Content Include="images\secretariashome_r4_c5.jpg" />
+    <Content Include="images\secretariashome_r4_c6.jpg" />
+    <Content Include="images\secretariashome_r5_c2.jpg" />
+    <Content Include="images\secretariashome_r5_c5.jpg" />
+    <Content Include="images\secretariashome_r6_c2.jpg" />
+    <Content Include="images\secretariashome_r6_c3.jpg" />
+    <Content Include="images\secretariashome_r6_c5.jpg" />
+    <Content Include="images\secretariashome_r6_c6.jpg" />
+    <Content Include="images\secretariashome_r7_c2.jpg" />
+    <Content Include="images\secretariashome_r7_c5.jpg" />
+    <Content Include="images\secretariashome_r8_c2.jpg" />
+    <Content Include="images\secretariashome_r8_c3.jpg" />
+    <Content Include="images\secretariashome_r8_c5.jpg" />
+    <Content Include="images\secretariashome_r8_c6.jpg" />
+    <Content Include="images\secretariashome_r9_c1.jpg" />
+    <Content Include="images\servicoshome1over_r10_c10.jpg" />
+    <Content Include="images\servicoshome1over_r10_c2.jpg" />
+    <Content Include="images\servicoshome1over_r11_c2.jpg" />
+    <Content Include="images\servicoshome1over_r11_c3.jpg" />
+    <Content Include="images\servicoshome1over_r11_c8.jpg" />
+    <Content Include="images\servicoshome1over_r12_c3.jpg" />
+    <Content Include="images\servicoshome1over_r13_c3.jpg" />
+    <Content Include="images\servicoshome1over_r13_c4.jpg" />
+    <Content Include="images\servicoshome1over_r13_c7.jpg" />
+    <Content Include="images\servicoshome1over_r14_c10.jpg" />
+    <Content Include="images\servicoshome1over_r15_c4.jpg" />
+    <Content Include="images\servicoshome1over_r16_c2.jpg" />
+    <Content Include="images\servicoshome1over_r17_c1.jpg" />
+    <Content Include="images\servicoshome1over_r1_c1.jpg" />
+    <Content Include="images\servicoshome1over_r2_c1.jpg" />
+    <Content Include="images\servicoshome1over_r3_c1.jpg" />
+    <Content Include="images\servicoshome1over_r4_c1.jpg" />
+    <Content Include="images\servicoshome1over_r4_c10.jpg" />
+    <Content Include="images\servicoshome1over_r4_c11.jpg" />
+    <Content Include="images\servicoshome1over_r4_c12.jpg" />
+    <Content Include="images\servicoshome1over_r4_c13.jpg" />
+    <Content Include="images\servicoshome1over_r4_c2.jpg" />
+    <Content Include="images\servicoshome1over_r4_c5.jpg" />
+    <Content Include="images\servicoshome1over_r4_c6.jpg" />
+    <Content Include="images\servicoshome1over_r4_c9.jpg" />
+    <Content Include="images\servicoshome1over_r5_c10.jpg" />
+    <Content Include="images\servicoshome1over_r5_c12.jpg" />
+    <Content Include="images\servicoshome1over_r5_c2.jpg" />
+    <Content Include="images\servicoshome1over_r5_c6.jpg" />
+    <Content Include="images\servicoshome1over_r6_c10.jpg" />
+    <Content Include="images\servicoshome1over_r6_c12.jpg" />
+    <Content Include="images\servicoshome1over_r6_c2.jpg" />
+    <Content Include="images\servicoshome1over_r6_c6.jpg" />
+    <Content Include="images\servicoshome1over_r7_c10.jpg" />
+    <Content Include="images\servicoshome1over_r7_c12.jpg" />
+    <Content Include="images\servicoshome1over_r7_c2.jpg" />
+    <Content Include="images\servicoshome1over_r7_c6.jpg" />
+    <Content Include="images\servicoshome1over_r8_c10.jpg" />
+    <Content Include="images\servicoshome1over_r8_c12.jpg" />
+    <Content Include="images\servicoshome1over_r8_c2.jpg" />
+    <Content Include="images\servicoshome1over_r8_c6.jpg" />
+    <Content Include="images\servicoshome1over_r9_c10.jpg" />
+    <Content Include="images\servicoshome1over_r9_c12.jpg" />
+    <Content Include="images\servicoshome1over_r9_c2.jpg" />
+    <Content Include="images\servicoshome1over_r9_c6.jpg" />
+    <Content Include="images\servicoshome1_r10_c10.jpg" />
+    <Content Include="images\servicoshome1_r10_c2.jpg" />
+    <Content Include="images\servicoshome1_r11_c2.jpg" />
+    <Content Include="images\servicoshome1_r11_c3.jpg" />
+    <Content Include="images\servicoshome1_r11_c8.jpg" />
+    <Content Include="images\servicoshome1_r12_c3.jpg" />
+    <Content Include="images\servicoshome1_r13_c3.jpg" />
+    <Content Include="images\servicoshome1_r13_c4.jpg" />
+    <Content Include="images\servicoshome1_r13_c7.jpg" />
+    <Content Include="images\servicoshome1_r14_c10.jpg" />
+    <Content Include="images\servicoshome1_r15_c4.jpg" />
+    <Content Include="images\servicoshome1_r16_c2.jpg" />
+    <Content Include="images\servicoshome1_r17_c1.jpg" />
+    <Content Include="images\servicoshome1_r1_c1.jpg" />
+    <Content Include="images\servicoshome1_r2_c1.jpg" />
+    <Content Include="images\servicoshome1_r2_c2.jpg" />
+    <Content Include="images\servicoshome1_r2_c6.jpg" />
+    <Content Include="images\servicoshome1_r3_c1.jpg" />
+    <Content Include="images\servicoshome1_r3_c2.jpg" />
+    <Content Include="images\servicoshome1_r4_c1.jpg" />
+    <Content Include="images\servicoshome1_r4_c10.jpg" />
+    <Content Include="images\servicoshome1_r4_c11.jpg" />
+    <Content Include="images\servicoshome1_r4_c12.jpg" />
+    <Content Include="images\servicoshome1_r4_c13.jpg" />
+    <Content Include="images\servicoshome1_r4_c2.jpg" />
+    <Content Include="images\servicoshome1_r4_c3.jpg" />
+    <Content Include="images\servicoshome1_r4_c4.jpg" />
+    <Content Include="images\servicoshome1_r4_c5.jpg" />
+    <Content Include="images\servicoshome1_r4_c6.jpg" />
+    <Content Include="images\servicoshome1_r4_c9.jpg" />
+    <Content Include="images\servicoshome1_r5_c10.jpg" />
+    <Content Include="images\servicoshome1_r5_c12.jpg" />
+    <Content Include="images\servicoshome1_r5_c2.jpg" />
+    <Content Include="images\servicoshome1_r5_c3.jpg" />
+    <Content Include="images\servicoshome1_r5_c4.jpg" />
+    <Content Include="images\servicoshome1_r5_c5.jpg" />
+    <Content Include="images\servicoshome1_r5_c6.jpg" />
+    <Content Include="images\servicoshome1_r6_c10.jpg" />
+    <Content Include="images\servicoshome1_r6_c12.jpg" />
+    <Content Include="images\servicoshome1_r6_c2.jpg" />
+    <Content Include="images\servicoshome1_r6_c3.jpg" />
+    <Content Include="images\servicoshome1_r6_c4.jpg" />
+    <Content Include="images\servicoshome1_r6_c5.jpg" />
+    <Content Include="images\servicoshome1_r6_c6.jpg" />
+    <Content Include="images\servicoshome1_r7_c10.jpg" />
+    <Content Include="images\servicoshome1_r7_c12.jpg" />
+    <Content Include="images\servicoshome1_r7_c2.jpg" />
+    <Content Include="images\servicoshome1_r7_c3.jpg" />
+    <Content Include="images\servicoshome1_r7_c5.jpg" />
+    <Content Include="images\servicoshome1_r7_c6.jpg" />
+    <Content Include="images\servicoshome1_r8_c1.jpg" />
+    <Content Include="images\servicoshome1_r8_c10.jpg" />
+    <Content Include="images\servicoshome1_r8_c12.jpg" />
+    <Content Include="images\servicoshome1_r8_c2.jpg" />
+    <Content Include="images\servicoshome1_r8_c6.jpg" />
+    <Content Include="images\servicoshome1_r9_c10.jpg" />
+    <Content Include="images\servicoshome1_r9_c12.jpg" />
+    <Content Include="images\servicoshome1_r9_c2.jpg" />
+    <Content Include="images\servicoshome1_r9_c6.jpg" />
+    <Content Include="img\a22.png" />
+    <Content Include="img\b05.png" />
+    <Content Include="img\blue.jpg" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\purple.jpg" />
+    <Content Include="img\red.jpg" />
+    <Content Include="js\angular.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery-1.9.1.min.js" />
+    <Content Include="js\jquery.bxslider.js" />
+    <Content Include="js\jssor.slider-22.1.6.debug.js" />
+    <Content Include="js\jssor.slider-22.1.6.min.js" />
+    <Content Include="js\jssor.slider-22.1.6.mini.js" />
+    <Content Include="js\jssor.slider.min.js" />
+    <Content Include="js\mm_css_menu.js" />
+    <Content Include="Content\topo.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\._bg_not.jpg" />
+    <Content Include="images\._homeinformativo_r1_c1.jpg" />
+    <Content Include="images\._homeinformativo_r1_c15.jpg" />
+    <Content Include="images\._homeinformativo_r1_c2.jpg" />
+    <Content Include="images\._homeinformativo_r1_c3.jpg" />
+    <Content Include="images\._homeinformativo_r1_c4.jpg" />
+    <Content Include="images\._homeinformativo_r2_c10.jpg" />
+    <Content Include="images\._homeinformativo_r2_c11.jpg" />
+    <Content Include="images\._homeinformativo_r2_c2.jpg" />
+    <Content Include="images\._homeinformativo_r2_c4.jpg" />
+    <Content Include="images\._homeinformativo_r2_c5.jpg" />
+    <Content Include="images\._homeinformativo_r2_c6.jpg" />
+    <Content Include="images\._homeinformativo_r2_c7.jpg" />
+    <Content Include="images\._homeinformativo_r3_c11.jpg" />
+    <Content Include="images\._homeinformativo_r3_c14.jpg" />
+    <Content Include="images\._homeinformativo_r4_c11.jpg" />
+    <Content Include="images\._homeinformativo_r4_c12.jpg" />
+    <Content Include="images\._homeinformativo_r4_c13.jpg" />
+    <Content Include="images\._homeinformativo_r4_c7.jpg" />
+    <Content Include="images\._homeinformativo_r4_c8.jpg" />
+    <Content Include="images\._homeinformativo_r4_c9.jpg" />
+    <Content Include="images\._homeinformativo_r5_c12.jpg" />
+    <Content Include="images\._homeinformativo_r5_c8.jpg" />
+    <Content Include="images\._homeinformativo_r6_c14.jpg" />
+    <Content Include="images\._homeinformativo_r7_c10.jpg" />
+    <Content Include="images\._homeinformativo_r7_c2.jpg" />
+    <Content Include="images\._homeinformativo_r7_c4.jpg" />
+    <Content Include="images\._homeinformativo_r7_c6.jpg" />
+    <Content Include="images\._homenoticias_r1_c1.jpg" />
+    <Content Include="images\._homenoticias_r1_c6.jpg" />
+    <Content Include="images\._homenoticias_r2_c1.jpg" />
+    <Content Include="images\._homenoticias_r2_c2.jpg" />
+    <Content Include="images\._homenoticias_r2_c3.jpg" />
+    <Content Include="images\._homenoticias_r2_c5.jpg" />
+    <Content Include="images\._homenoticias_r3_c2.jpg" />
+    <Content Include="images\._homenoticias_r4_c2.jpg" />
+    <Content Include="images\._homenoticias_r5_c2.jpg" />
+    <Content Include="images\._homenoticias_r5_c4.jpg" />
+    <Content Include="images\._homenoticias_r6_c1.jpg" />
+    <Content Include="images\._homenoticias_r6_c6.jpg" />
+    <Content Include="images\._homeprogramas_r1_c1.jpg" />
+    <Content Include="images\._homeprogramas_r2_c1.jpg" />
+    <Content Include="images\._homeprogramas_r3_c1.jpg" />
+    <Content Include="images\._homeredessociais_r1_c1.jpg" />
+    <Content Include="images\._homeredessociais_r2_c1.jpg" />
+    <Content Include="images\._homeredessociais_r2_c2.jpg" />
+    <Content Include="images\._homeredessociais_r2_c3.jpg" />
+    <Content Include="images\._homeredessociais_r2_c4.jpg" />
+    <Content Include="images\._homeredessociais_r2_c5.jpg" />
+    <Content Include="images\._homeredessociais_r3_c2.jpg" />
+    <Content Include="images\._homeredessociais_r4_c1.jpg" />
+    <Content Include="images\._homesecretarias_r1_c1.jpg" />
+    <Content Include="images\._homesecretarias_r2_c1.jpg" />
+    <Content Include="images\._homesecretarias_r2_c2.jpg" />
+    <Content Include="images\._homesecretarias_r2_c3.jpg" />
+    <Content Include="images\._homesecretarias_r2_c4.jpg" />
+    <Content Include="images\._homesecretarias_r3_c2.jpg" />
+    <Content Include="images\._homesecretarias_r4_c2.jpg" />
+    <Content Include="images\._homesecretarias_r5_c2.jpg" />
+    <Content Include="images\._homesecretarias_r6_c1.jpg" />
+    <Content Include="images\._homeservicos_r1_c1.jpg" />
+    <Content Include="images\._homeservicos_r2_c1.jpg" />
+    <Content Include="images\._homeservicos_r2_c4.jpg" />
+    <Content Include="images\._homeservicos_r3_c1.jpg" />
+    <Content Include="images\._homeservicos_r3_c2.jpg" />
+    <Content Include="images\._homeservicos_r3_c3.jpg" />
+    <Content Include="images\._homeservicos_r4_c2.jpg" />
+    <Content Include="images\._homeservicos_r5_c2.jpg" />
+    <Content Include="images\._homeservicos_r6_c2.jpg" />
+    <Content Include="images\._homeservicos_r7_c1.jpg" />
+    <Content Include="images\._noticias_r1_c1.jpg" />
+    <Content Include="images\._noticias_r1_c2.jpg" />
+    <Content Include="images\._noticias_r1_c3.jpg" />
+    <Content Include="images\._noticias_r2_c1.jpg" />
+    <Content Include="images\._noticias_r2_c2.jpg" />
+    <Content Include="images\._noticias_r2_c3.jpg" />
+    <Content Include="images\._noticias_r3_c2.jpg" />
+    <Content Include="images\._noticias_r4_c1.jpg" />
+    <Content Include="images\._noticias_r4_c2.jpg" />
+    <Content Include="images\._noticias_r5_c1.jpg" />
+    <Content Include="images\._noticias_r5_c2.jpg" />
+    <Content Include="images\._noticias_r5_c3.jpg" />
+    <Content Include="images\._noticias_r6_c1.jpg" />
+    <Content Include="images\._notpag_r1_c1.jpg" />
+    <Content Include="images\._notpag_r1_c2.jpg" />
+    <Content Include="images\._notpag_r1_c3.jpg" />
+    <Content Include="images\._notpag_r2_c2.jpg" />
+    <Content Include="images\._notpag_r2_c3.jpg" />
+    <Content Include="images\._pagsecretarias_r1_c1.jpg" />
+    <Content Include="images\._pagsecretarias_r2_c1.jpg" />
+    <Content Include="images\._pagsecretarias_r2_c2.jpg" />
+    <Content Include="images\._pagsecretarias_r3_c1.jpg" />
+    <Content Include="images\._pagsecretarias_r4_c1.jpg" />
+    <Content Include="images\._rodape_r1_c1.jpg" />
+    <Content Include="images\._rodape_r2_c1.jpg" />
+    <Content Include="images\._rodape_r2_c2.jpg" />
+    <Content Include="images\._rodape_r2_c3.jpg" />
+    <Content Include="images\._rodape_r2_c4.jpg" />
+    <Content Include="images\._rodape_r3_c3.jpg" />
+    <Content Include="images\._rodape_r4_c1.jpg" />
+    <Content Include="images\._rodape_r5_c1.jpg" />
+    <Content Include="images\._secrehome_r1_c1.jpg" />
+    <Content Include="images\._secrehome_r1_c2.jpg" />
+    <Content Include="images\._secrehome_r1_c3.jpg" />
+    <Content Include="images\._secrehome_r1_c4.jpg" />
+    <Content Include="images\._secrehome_r1_c5.jpg" />
+    <Content Include="images\._secrehome_r1_c6.jpg" />
+    <Content Include="images\._secrehome_r1_c7.jpg" />
+    <Content Include="images\._secrehome_r2_c1.jpg" />
+    <Content Include="images\._secrehome_r2_c3.jpg" />
+    <Content Include="images\._secrehome_r2_c5.jpg" />
+    <Content Include="images\._secrehome_r2_c7.jpg" />
+    <Content Include="images\._secrehome_r3_c1.jpg" />
+    <Content Include="images\._secrehome_r3_c3.jpg" />
+    <Content Include="images\._secrehome_r3_c5.jpg" />
+    <Content Include="images\._secrehome_r3_c7.jpg" />
+    <Content Include="images\._secrehome_r4_c1.jpg" />
+    <Content Include="images\._secrehome_r4_c3.jpg" />
+    <Content Include="images\._secrehome_r4_c5.jpg" />
+    <Content Include="images\._secrehome_r4_c7.jpg" />
+    <Content Include="images\._slide.jpg" />
+    <Content Include="images\._spacer.gif" />
+    <Content Include="images\._tabelanot_r1_c1.jpg" />
+    <Content Include="images\._tabelanot_r2_c1.jpg" />
+    <Content Include="images\._tabelanot_r2_c2.jpg" />
+    <Content Include="images\._tabelanot_r2_c3.jpg" />
+    <Content Include="images\._tabelanot_r3_c2.jpg" />
+    <Content Include="images\._tabelanot_r4_c2.jpg" />
+    <Content Include="images\._tabelanot_r5_c1.jpg" />
+    <Content Include="images\._tbnoticia_r1_c1.jpg" />
+    <Content Include="images\._tbnoticia_r2_c1.jpg" />
+    <Content Include="images\._tbnoticia_r2_c2.jpg" />
+    <Content Include="images\._tbnoticia_r2_c3.jpg" />
+    <Content Include="images\._tbnoticia_r2_c4.jpg" />
+    <Content Include="images\._tbnoticia_r2_c5.jpg" />
+    <Content Include="images\._tbnoticia_r3_c1.jpg" />
+    <Content Include="images\._tbnoticia_r4_c1.jpg" />
+    <Content Include="images\._tbnoticia_r4_c2.jpg" />
+    <Content Include="images\._tbnoticia_r4_c3.jpg" />
+    <Content Include="images\._tbnoticia_r4_c4.jpg" />
+    <Content Include="images\._tbnoticia_r4_c5.jpg" />
+    <Content Include="images\._tbnoticia_r5_c1.jpg" />
+    <Content Include="images\._tbrod_r1_c1.jpg" />
+    <Content Include="images\._tbrod_r1_c2.jpg" />
+    <Content Include="images\._tbrod_r1_c3.jpg" />
+    <Content Include="images\._tbrod_r1_c4.jpg" />
+    <Content Include="images\._tbrod_r1_c5.jpg" />
+    <Content Include="images\._tbrod_r1_c6.jpg" />
+    <Content Include="images\._tbrod_r1_c7.jpg" />
+    <Content Include="images\._tbrod_r2_c1.jpg" />
+    <Content Include="images\._tbrod_r2_c2.jpg" />
+    <Content Include="images\._tbrod_r2_c3.jpg" />
+    <Content Include="images\._tbrod_r2_c4.jpg" />
+    <Content Include="images\._tbrod_r2_c5.jpg" />
+    <Content Include="images\._tbrod_r2_c6.jpg" />
+    <Content Include="images\._tbrod_r3_c1.jpg" />
+    <Content Include="images\._topo_r1_c1.jpg" />
+    <Content Include="images\._topo_r1_c10.jpg" />
+    <Content Include="images\._topo_r1_c11.jpg" />
+    <Content Include="images\._topo_r1_c12.jpg" />
+    <Content Include="images\._topo_r1_c2.jpg" />
+    <Content Include="images\._topo_r1_c5.jpg" />
+    <Content Include="images\._topo_r1_c6.jpg" />
+    <Content Include="images\._topo_r1_c7.jpg" />
+    <Content Include="images\._topo_r1_c8.jpg" />
+    <Content Include="images\._topo_r1_c9.jpg" />
+    <Content Include="images\._topo_r2_c2.jpg" />
+    <Content Include="images\._topo_r2_c5.jpg" />
+    <Content Include="images\._topo_r2_c6.jpg" />
+    <Content Include="images\._topo_r2_c7.jpg" />
+    <Content Include="images\._topo_r2_c9.jpg" />
+    <Content Include="images\._topo_r3_c11.jpg" />
+    <Content Include="images\._topo_r3_c2.jpg" />
+    <Content Include="images\._topo_r3_c3.jpg" />
+    <Content Include="images\._topo_r3_c4.jpg" />
+    <Content Include="images\._topo_r3_c5.jpg" />
+    <Content Include="images\._topo_r3_c9.jpg" />
+    <Content Include="images\._topo_r4_c10.jpg" />
+    <Content Include="images\._topo_r4_c2.jpg" />
+    <Content Include="images\._topo_r4_c3.jpg" />
+    <Content Include="images\._topo_r4_c4.jpg" />
+    <Content Include="images\._topo_r4_c7.jpg" />
+    <Content Include="images\._topo_r4_c8.jpg" />
+    <Content Include="images\._topo_r5_c3.jpg" />
+    <Content Include="images\bg_not.jpg" />
+    <Content Include="images\homeinformativo_r1_c1.jpg" />
+    <Content Include="images\homeinformativo_r1_c15.jpg" />
+    <Content Include="images\homeinformativo_r1_c2.jpg" />
+    <Content Include="images\homeinformativo_r1_c3.jpg" />
+    <Content Include="images\homeinformativo_r1_c4.jpg" />
+    <Content Include="images\homeinformativo_r2_c10.jpg" />
+    <Content Include="images\homeinformativo_r2_c11.jpg" />
+    <Content Include="images\homeinformativo_r2_c2.jpg" />
+    <Content Include="images\homeinformativo_r2_c4.jpg" />
+    <Content Include="images\homeinformativo_r2_c5.jpg" />
+    <Content Include="images\homeinformativo_r2_c6.jpg" />
+    <Content Include="images\homeinformativo_r2_c7.jpg" />
+    <Content Include="images\homeinformativo_r3_c11.jpg" />
+    <Content Include="images\homeinformativo_r3_c14.jpg" />
+    <Content Include="images\homeinformativo_r4_c11.jpg" />
+    <Content Include="images\homeinformativo_r4_c12.jpg" />
+    <Content Include="images\homeinformativo_r4_c13.jpg" />
+    <Content Include="images\homeinformativo_r4_c7.jpg" />
+    <Content Include="images\homeinformativo_r4_c8.jpg" />
+    <Content Include="images\homeinformativo_r4_c9.jpg" />
+    <Content Include="images\homeinformativo_r5_c12.jpg" />
+    <Content Include="images\homeinformativo_r5_c8.jpg" />
+    <Content Include="images\homeinformativo_r6_c14.jpg" />
+    <Content Include="images\homeinformativo_r7_c10.jpg" />
+    <Content Include="images\homeinformativo_r7_c2.jpg" />
+    <Content Include="images\homeinformativo_r7_c4.jpg" />
+    <Content Include="images\homeinformativo_r7_c6.jpg" />
+    <Content Include="images\homenoticias_r1_c1.jpg" />
+    <Content Include="images\homenoticias_r1_c6.jpg" />
+    <Content Include="images\homenoticias_r2_c1.jpg" />
+    <Content Include="images\homenoticias_r2_c2.jpg" />
+    <Content Include="images\homenoticias_r2_c3.jpg" />
+    <Content Include="images\homenoticias_r2_c5.jpg" />
+    <Content Include="images\homenoticias_r3_c2.jpg" />
+    <Content Include="images\homenoticias_r4_c2.jpg" />
+    <Content Include="images\homenoticias_r5_c2.jpg" />
+    <Content Include="images\homenoticias_r5_c4.jpg" />
+    <Content Include="images\homenoticias_r6_c1.jpg" />
+    <Content Include="images\homenoticias_r6_c6.jpg" />
+    <Content Include="images\homeprogramas_r1_c1.jpg" />
+    <Content Include="images\homeprogramas_r2_c1.jpg" />
+    <Content Include="images\homeprogramas_r3_c1.jpg" />
+    <Content Include="images\homeredessociais_r1_c1.jpg" />
+    <Content Include="images\homeredessociais_r2_c1.jpg" />
+    <Content Include="images\homeredessociais_r2_c2.jpg" />
+    <Content Include="images\homeredessociais_r2_c3.jpg" />
+    <Content Include="images\homeredessociais_r2_c4.jpg" />
+    <Content Include="images\homeredessociais_r2_c5.jpg" />
+    <Content Include="images\homeredessociais_r3_c2.jpg" />
+    <Content Include="images\homeredessociais_r4_c1.jpg" />
+    <Content Include="images\homesecretarias_r1_c1.jpg" />
+    <Content Include="images\homesecretarias_r2_c1.jpg" />
+    <Content Include="images\homesecretarias_r2_c2.jpg" />
+    <Content Include="images\homesecretarias_r2_c3.jpg" />
+    <Content Include="images\homesecretarias_r2_c4.jpg" />
+    <Content Include="images\homesecretarias_r3_c2.jpg" />
+    <Content Include="images\homesecretarias_r4_c2.jpg" />
+    <Content Include="images\homesecretarias_r5_c2.jpg" />
+    <Content Include="images\homesecretarias_r6_c1.jpg" />
+    <Content Include="images\homeservicos_r1_c1.jpg" />
+    <Content Include="images\homeservicos_r2_c1.jpg" />
+    <Content Include="images\homeservicos_r2_c4.jpg" />
+    <Content Include="images\homeservicos_r3_c1.jpg" />
+    <Content Include="images\homeservicos_r3_c2.jpg" />
+    <Content Include="images\homeservicos_r3_c3.jpg" />
+    <Content Include="images\homeservicos_r4_c2.jpg" />
+    <Content Include="images\homeservicos_r5_c2.jpg" />
+    <Content Include="images\homeservicos_r6_c2.jpg" />
+    <Content Include="images\homeservicos_r7_c1.jpg" />
+    <Content Include="images\noticias_r1_c1.jpg" />
+    <Content Include="images\noticias_r1_c2.jpg" />
+    <Content Include="images\noticias_r1_c3.jpg" />
+    <Content Include="images\noticias_r2_c1.jpg" />
+    <Content Include="images\noticias_r2_c2.jpg" />
+    <Content Include="images\noticias_r2_c3.jpg" />
+    <Content Include="images\noticias_r3_c2.jpg" />
+    <Content Include="images\noticias_r4_c1.jpg" />
+    <Content Include="images\noticias_r4_c2.jpg" />
+    <Content Include="images\noticias_r5_c1.jpg" />
+    <Content Include="images\noticias_r5_c2.jpg" />
+    <Content Include="images\noticias_r5_c3.jpg" />
+    <Content Include="images\noticias_r6_c1.jpg" />
+    <Content Include="images\notpag_r1_c1.jpg" />
+    <Content Include="images\notpag_r1_c2.jpg" />
+    <Content Include="images\notpag_r1_c3.jpg" />
+    <Content Include="images\notpag_r2_c2.jpg" />
+    <Content Include="images\notpag_r2_c3.jpg" />
+    <Content Include="images\pagsecretarias_r1_c1.jpg" />
+    <Content Include="images\pagsecretarias_r2_c1.jpg" />
+    <Content Include="images\pagsecretarias_r2_c2.jpg" />
+    <Content Include="images\pagsecretarias_r3_c1.jpg" />
+    <Content Include="images\pagsecretarias_r4_c1.jpg" />
+    <Content Include="images\rodape_r1_c1.jpg" />
+    <Content Include="images\rodape_r2_c1.jpg" />
+    <Content Include="images\rodape_r2_c2.jpg" />
+    <Content Include="images\rodape_r2_c3.jpg" />
+    <Content Include="images\rodape_r2_c4.jpg" />
+    <Content Include="images\rodape_r3_c3.jpg" />
+    <Content Include="images\rodape_r4_c1.jpg" />
+    <Content Include="images\rodape_r5_c1.jpg" />
+    <Content Include="images\secrehome_r1_c1.jpg" />
+    <Content Include="images\secrehome_r1_c2.jpg" />
+    <Content Include="images\secrehome_r1_c3.jpg" />
+    <Content Include="images\secrehome_r1_c4.jpg" />
+    <Content Include="images\secrehome_r1_c5.jpg" />
+    <Content Include="images\secrehome_r1_c6.jpg" />
+    <Content Include="images\secrehome_r1_c7.jpg" />
+    <Content Include="images\secrehome_r2_c1.jpg" />
+    <Content Include="images\secrehome_r2_c3.jpg" />
+    <Content Include="images\secrehome_r2_c5.jpg" />
+    <Content Include="images\secrehome_r2_c7.jpg" />
+    <Content Include="images\secrehome_r3_c1.jpg" />
+    <Content Include="images\secrehome_r3_c3.jpg" />
+    <Content Include="images\secrehome_r3_c5.jpg" />
+    <Content Include="images\secrehome_r3_c7.jpg" />
+    <Content Include="images\secrehome_r4_c1.jpg" />
+    <Content Include="images\secrehome_r4_c3.jpg" />
+    <Content Include="images\secrehome_r4_c5.jpg" />
+    <Content Include="images\secrehome_r4_c7.jpg" />
+    <Content Include="images\slide.jpg" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\tabelanot_r1_c1.jpg" />
+    <Content Include="images\tabelanot_r2_c1.jpg" />
+    <Content Include="images\tabelanot_r2_c2.jpg" />
+    <Content Include="images\tabelanot_r2_c3.jpg" />
+    <Content Include="images\tabelanot_r3_c2.jpg" />
+    <Content Include="images\tabelanot_r4_c2.jpg" />
+    <Content Include="images\tabelanot_r5_c1.jpg" />
+    <Content Include="images\tbnoticia_r1_c1.jpg" />
+    <Content Include="images\tbnoticia_r2_c1.jpg" />
+    <Content Include="images\tbnoticia_r2_c2.jpg" />
+    <Content Include="images\tbnoticia_r2_c3.jpg" />
+    <Content Include="images\tbnoticia_r2_c4.jpg" />
+    <Content Include="images\tbnoticia_r2_c5.jpg" />
+    <Content Include="images\tbnoticia_r3_c1.jpg" />
+    <Content Include="images\tbnoticia_r4_c1.jpg" />
+    <Content Include="images\tbnoticia_r4_c2.jpg" />
+    <Content Include="images\tbnoticia_r4_c3.jpg" />
+    <Content Include="images\tbnoticia_r4_c4.jpg" />
+    <Content Include="images\tbnoticia_r4_c5.jpg" />
+    <Content Include="images\tbnoticia_r5_c1.jpg" />
+    <Content Include="images\tbrod_r1_c1.jpg" />
+    <Content Include="images\tbrod_r1_c2.jpg" />
+    <Content Include="images\tbrod_r1_c3.jpg" />
+    <Content Include="images\tbrod_r1_c4.jpg" />
+    <Content Include="images\tbrod_r1_c5.jpg" />
+    <Content Include="images\tbrod_r1_c6.jpg" />
+    <Content Include="images\tbrod_r1_c7.jpg" />
+    <Content Include="images\tbrod_r2_c1.jpg" />
+    <Content Include="images\tbrod_r2_c2.jpg" />
+    <Content Include="images\tbrod_r2_c3.jpg" />
+    <Content Include="images\tbrod_r2_c4.jpg" />
+    <Content Include="images\tbrod_r2_c5.jpg" />
+    <Content Include="images\tbrod_r2_c6.jpg" />
+    <Content Include="images\tbrod_r3_c1.jpg" />
+    <Content Include="images\topo_r1_c1.jpg" />
+    <Content Include="images\topo_r1_c10.jpg" />
+    <Content Include="images\topo_r1_c11.jpg" />
+    <Content Include="images\topo_r1_c12.jpg" />
+    <Content Include="images\topo_r1_c2.jpg" />
+    <Content Include="images\topo_r1_c5.jpg" />
+    <Content Include="images\topo_r1_c6.jpg" />
+    <Content Include="images\topo_r1_c7.jpg" />
+    <Content Include="images\topo_r1_c8.jpg" />
+    <Content Include="images\topo_r1_c9.jpg" />
+    <Content Include="images\topo_r2_c2.jpg" />
+    <Content Include="images\topo_r2_c5.jpg" />
+    <Content Include="images\topo_r2_c6.jpg" />
+    <Content Include="images\topo_r2_c7.jpg" />
+    <Content Include="images\topo_r2_c9.jpg" />
+    <Content Include="images\topo_r3_c11.jpg" />
+    <Content Include="images\topo_r3_c2.jpg" />
+    <Content Include="images\topo_r3_c3.jpg" />
+    <Content Include="images\topo_r3_c4.jpg" />
+    <Content Include="images\topo_r3_c5.jpg" />
+    <Content Include="images\topo_r3_c9.jpg" />
+    <Content Include="images\topo_r4_c10.jpg" />
+    <Content Include="images\topo_r4_c2.jpg" />
+    <Content Include="images\topo_r4_c3.jpg" />
+    <Content Include="images\topo_r4_c4.jpg" />
+    <Content Include="images\topo_r4_c7.jpg" />
+    <Content Include="images\topo_r4_c8.jpg" />
+    <Content Include="images\topo_r5_c3.jpg" />
+    <Content Include="lib\images\1.jpg" />
+    <Content Include="lib\images\2.jpg" />
+    <Content Include="lib\images\3.jpg" />
+    <Content Include="lib\images\4.jpg" />
+    <Content Include="lib\images\bx_loader.gif" />
+    <Content Include="lib\images\controls.png" />
+    <Content Include="lib\jquery.bxslider.css" />
+    <Content Include="slide\data1\images\._1.jpg" />
+    <Content Include="slide\data1\images\._2.jpg" />
+    <Content Include="slide\data1\images\._3.jpg" />
+    <Content Include="slide\data1\images\._4.jpg" />
+    <Content Include="slide\data1\images\1.jpg" />
+    <Content Include="slide\data1\images\2.jpg" />
+    <Content Include="slide\data1\images\3.jpg" />
+    <Content Include="slide\data1\images\4.jpg" />
+    <Content Include="slide\data1\tooltips\1.jpg" />
+    <Content Include="slide\data1\tooltips\2.jpg" />
+    <Content Include="slide\data1\tooltips\3.jpg" />
+    <Content Include="slide\data1\tooltips\4.jpg" />
+    <Content Include="slide\engine1\arrows.png" />
+    <Content Include="slide\engine1\bullet.png" />
+    <Content Include="slide\engine1\jquery.js" />
+    <Content Include="slide\engine1\script.js" />
+    <Content Include="slide\engine1\shadow.png" />
+    <Content Include="slide\engine1\style.css" />
+    <Content Include="slide\engine1\wowslider.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Arquivos\Jari\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_MasterPrincipal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonte\.DS_Store" />
+    <Content Include="fonte\._.DS_Store" />
+    <Content Include="fonte\._Arial Rounded MT Bold Negrito.ttf" />
+    <Content Include="fonte\Arial Rounded MT Bold Negrito.ttf" />
+    <Content Include="images\.DS_Store" />
+    <Content Include="images\._.DS_Store" />
+    <Content Include="slide\.DS_Store" />
+    <Content Include="slide\data1\.DS_Store" />
+    <Content Include="slide\data1\._.DS_Store" />
+    <Content Include="slide\data1\images\.DS_Store" />
+    <Content Include="slide\data1\images\._.DS_Store" />
+    <Content Include="slide\engine1\.DS_Store" />
+    <Content Include="slide\engine1\._.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Arquivos\Alvara\Academia de Ginástica.pdf" />
+    <Content Include="Arquivos\Alvara\Atividade Odontológica.pdf" />
+    <Content Include="Arquivos\Alvara\Atividade Veterinária.pdf" />
+    <Content Include="Arquivos\Alvara\Atividades de Fisioterapia.pdf" />
+    <Content Include="Arquivos\Alvara\Clube Desportivo e Sauna.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Atacadista de Cosméticos e de Higiene Pessoal e Saneantes.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Atacadista de Produtos para Saúde.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Varejista de Alimentos.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Varejista de Cosméticos e de Higiene Pessoal e Saneantes.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Varejista de Suplementos Alimentares.pdf" />
+    <Content Include="Arquivos\Alvara\Consultório de Profissional da Saúde.pdf" />
+    <Content Include="Arquivos\Alvara\Creche e Estabelecimento de Ensino.pdf" />
+    <Content Include="Arquivos\Alvara\Farmácia, Drogaria e Distribuidora de Medicamentos.pdf" />
+    <Content Include="Arquivos\Alvara\HospitaL, Clínica e Ambulatório.pdf" />
+    <Content Include="Arquivos\Alvara\Hotel, Motel,  Pensão e similares.pdf" />
+    <Content Include="Arquivos\Alvara\Indústria de Alimentos.pdf" />
+    <Content Include="Arquivos\Alvara\Indústria de Cosméticos.pdf" />
+    <Content Include="Arquivos\Alvara\Indústria e Distribuidora de Domissanitários.pdf" />
+    <Content Include="Arquivos\Alvara\Laboratório de Análises Clínicas e Posto de Coleta.pdf" />
+    <Content Include="Arquivos\Alvara\Lavanderia.pdf" />
+    <Content Include="Arquivos\Alvara\Ópticas.pdf" />
+    <Content Include="Arquivos\Alvara\Salão de Beleza.pdf" />
+    <Content Include="Arquivos\Alvara\Serviço de Controle de Pragas.pdf" />
+    <Content Include="Arquivos\Alvara\Serviço de Limpeza.pdf" />
+    <Content Include="Arquivos\Alvara\Serviços de Prótese Dentária.pdf" />
+    <Content Include="Arquivos\Alvara\Serviços Funerários.pdf" />
+    <Content Include="Arquivos\AreaAzul\Decreto843.pdf" />
+    <Content Include="Arquivos\Cep\CEPNOVO.pdf" />
+    <Content Include="Arquivos\RPS.pdf" />
+    <Content Include="Arquivos\TermoCon\3941_-_Anexo_III_plano_diretor_camara.doc.doc" />
+    <Content Include="Arquivos\TermoCon\3941_-_Lei_do_Plano_Diretor_2006.doc.doc" />
+    <Content Include="Arquivos\TermoCon\codigo_de_obras_Lei_856_de_23-11-1964.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\decreto_121_de_2007-_normas_geoprocessamento.doc.doc" />
+    <Content Include="Arquivos\TermoCon\DECRETO_539_DE_17_DE_MAIO_DE_2012.doc.doc" />
+    <Content Include="Arquivos\TermoCon\documentacao_necessaria_para_obtencao_de_licencas.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Estabelce_norma_para_construcao_urbana.doc.doc" />
+    <Content Include="Arquivos\TermoCon\lei__nº2595_de_09_de_09_de_1994.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\Lei_2484_1993_-Parcelamento_do_Solo%28sem_anexos%29.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3137-99_loteamentos_fechados_condominiais_de_chacars_ou_sitio_de_recreio.doc %281%29.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3137-99_loteamentos_fechados_condominiais_de_chacars_ou_sitio_de_recreio.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3216-00_denominacao_logradouros.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\Lei_3534-03-_INSTALACAO_DE_ANTENAS.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3839_-_Caderneta_de_obras.doc.doc" />
+    <Content Include="Arquivos\TermoCon\lei_delimita_o_perimetro_urbano.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\lei_parcelamento_do_solo_anexos.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\narmas_para_o_habite-se.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\RESTRICOES_JARDIM_DA_COLINA.doc.doc" />
+    <Content Include="Arquivos\TermoCon\restricoes_urbanisticas_dos__loteamentos.doc.doc" />
+    <Content Include="Arquivos\TermoCon\termo.pdf" />
+    <None Include="Properties\PublishProfiles\Site2017Web.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ListaNoticias.cshtml" />
+    <Content Include="Views\Home\Noticias.cshtml" />
+    <Content Include="Views\Home\ListaSecretaria.cshtml" />
+    <Content Include="Views\Home\Secretaria.cshtml" />
+    <Content Include="Views\Home\EmissaoAlvara.cshtml" />
+    <Content Include="Views\Home\AreaAzul.cshtml" />
+    <Content Include="Views\Home\TermoConstrucao.cshtml" />
+    <Content Include="Views\Home\Telefones.cshtml" />
+    <Content Include="Views\Home\CertidaoNegativo.cshtml" />
+    <Content Include="Views\Home\Manutencao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Site2016.Dominio\Site2016.Dominio.csproj">
+      <Project>{220c8492-18c2-4cd0-9f12-d7ba70419437}</Project>
+      <Name>Site2016.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Site2016.InfraEstrutura\Site2016.InfraEstrutura.csproj">
+      <Project>{2dbf5b52-1d2f-414e-a5f9-e02a2e7d5a0a}</Project>
+      <Name>Site2016.InfraEstrutura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Site2016.Negocio\Site2016.Negocio.csproj">
+      <Project>{164c410a-e44d-4d74-8d37-8112fbd9dd4b}</Project>
+      <Name>Site2016.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14514</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14346/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

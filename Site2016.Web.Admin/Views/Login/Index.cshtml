@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_MasterPageAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">Logar</div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Index", "Login"))
+                { 
+                <form role="form">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="E-mail" id="email" name="email" type="email" autofocus="">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Senha" id="senha" name="senha" type="password" value="">
+                        </div>
+                       
+                        <button type="submit" href="index.html" class="btn btn-primary">Logar</button>
+                    </fieldset>
+                </form>
+                }
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->
+
+
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/chart.min.js"></script>
+<script src="~/js/chart-data.js"></script>
+<script src="~/js/easypiechart.js"></script>
+<script src="~/js/easypiechart-data.js"></script>
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-table.js"></script>

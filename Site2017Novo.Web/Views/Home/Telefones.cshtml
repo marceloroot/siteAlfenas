@@ -1,0 +1,67 @@
+﻿@using PagedList.Mvc
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Telefones";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 topoSubpag">
+        <h3>Telefones</h3>
+
+    </div>
+
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("Telefones", "Home", FormMethod.Post))
+    {
+        <div class="row marginbootom30">
+
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 marginbootom30">
+
+
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="Digite o titulo da publicação">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Buscar</button>
+                    </span>
+                </div><!-- /input-group -->
+
+            </div>
+
+
+     @{
+
+        foreach (var variavel in ViewBag.telefones)
+        {
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 linha-vertical">
+               
+                    <p>Setor: @variavel.SecretariaUnica.Nome</p>
+                    <p>Endereço: @variavel.SecretariaUnica.Endereco</p>
+                    <h5>Telefone: @variavel.Numero</h5>
+                
+            </div>
+        }
+    }
+
+
+        </div>
+    }
+
+
+
+
+
+    <center>
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            Pagina @ViewBag.telefones.PageNumber de @ViewBag.telefones.PageCount
+
+            @Html.PagedListPager((PagedList.PagedList<Site2016.Dominio.Telefone>)ViewBag.telefones, page => Url.Action("Telefones", new { pagina = page }))
+        </div>
+
+    </center>
+</div>
+

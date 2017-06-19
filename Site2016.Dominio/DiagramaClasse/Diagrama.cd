@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Site2016.Dominio.Usuario">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGCAAABCAAAAAAAAAABAAAACAAAAQAAAAAAAEAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SecretariaUnica" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListPermissoes" />
+      <Property Name="ListNoticia" />
+      <Property Name="ListImagem" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.Arquivo">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAABAAAAAAIAAAAAAAAAQAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Arquivo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListTipoArquivo" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.Imagem">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAQBAABAAAAAAAAAAAAAAAAQAIAAAAAAAEAAAA=</HashCode>
+      <FileName>Imagem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UsuarioUnico" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListNoticia" />
+      <Property Name="ListTipoImagem" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.Jari">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAIAAAABCAAAAAAAAABAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Jari.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoJariUnico" />
+      <Property Name="UsuarioUnico" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.Noticia">
+    <Position X="2.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAAAAIAAAAAAABAAAAAAAIAAAAAACAAABA=</HashCode>
+      <FileName>Noticia.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UsuarioUnico" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListImagem" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.Permissao">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAEAAAA=</HashCode>
+      <FileName>Permissao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Site2016.Dominio.TipoArquivo">
+    <Position X="10" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>TipoArquivo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListArquivo" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.TipoImagem">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>TipoImagem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListImagem" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.TipoJari">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>TipoJari.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListJari" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.Telefone">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAA=</HashCode>
+      <FileName>Telefone.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SecretariaUnica" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Site2016.Dominio.Secretaria">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAGAAAAAAAAAIAAAAAAAAAAAAAoABAAAAAAAAEAEAg=</HashCode>
+      <FileName>Secretaria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SecretariaUnica" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListUsuario" />
+      <Property Name="ListTelefone" />
+      <Property Name="LsitaSubSecretarias" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

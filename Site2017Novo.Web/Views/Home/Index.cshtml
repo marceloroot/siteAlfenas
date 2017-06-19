@@ -1,0 +1,538 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+
+
+
+   <script src="~/js/jssor.slider.min.js"></script>
+    <script src="~/Content/angular.min.js"></script>
+
+    
+    int test = 0;
+    int countBanner = 0;
+    var urlHelper = new UrlHelper(Html.ViewContext.RequestContext);
+    var baseurl = "http://alfenas.mg.gov.br/Admin";
+}
+<script>
+
+    var app = angular.module("myApp", []);
+
+
+    app.controller("myCtrl", function ($scope) {
+
+
+        $scope.texto = [4];
+        var cont = 0;
+        $scope.trocaTexto = function (ident) {
+            // alert("entrou");
+            var html = $('#' + ident).text();
+            //alert(html);
+            var noTagText = $(html).text();
+            //  alert(noTagText);
+            $scope.texto[cont] = noTagText.substring(0, 225) + '...';
+            cont++;
+        }
+
+
+
+
+
+    });
+
+</script>
+<!--topo e menu-->
+<div class="row">
+    <div class="col-lg-8 col-md-12 col-xs-12 col-sm-12 nopadding ">
+        <a href="#" class="acessibilidade">
+            <span>Tamanho do texto</span>
+            <img src="~/images/amaior.jpg" class="encosta inc-font" alt="aumentar" title="aumentar" />
+            <img src="~/images/a.jpg" class="encosta res-font" alt="normal" title="normal" />
+            <img src="~/images/a-.jpg" class="encosta dec-font" alt="diminuir" title="diminuir" />
+        </a>
+    </div>
+</div>
+    <!--Div Menu Direito-->
+    <div class="col-lg-3 col-md-12 col-xs-12 col-sm-12">
+        <img src="~/images/home_AcessoInfo.jpg" alt="acessoinformacao" title="aceso a informação" />
+
+        <ul class="list-group texto1 menulateral">
+            <li class="list-group-item "><a href="@Url.Action("ConcursoPublico", "Home")"  target=" _blank">Atos administrativos</a></li>
+            <li class="list-group-item "><a href="@Url.Action("EditaisSimplificado", "Home")" target="_blank">Processo Seletivo</a></li>
+            <li><a href="https://e-gov.betha.com.br/cidadaoweb3/resource.faces?params=3UopnW5xjGmh0askFTtQsA==" target="_blank" class="texto1_submenu">Guia IPTU</a></li>
+            <li class="list-group-item "><a href="http://visa.alfenas.mg.gov.br/" target="_blank">Vigilância Sanitária</a></li>
+
+            <li class="list-group-item ">
+                Cidadão Web
+                <ul class="texto1 ">
+                    <li><span class="texto1_menu">Mais Acessados</span><hr class="hrmenu" /> </li>
+                    <li class="list-group-item "><a href="https://e-gov.betha.com.br/servidorpublico/login.faces;jsessionid=9E738DE6FBC4FB156ACE53260FF112B1.p0node6" target="_blank">Servidor público</a></li>
+                    <li><a href="https://e-gov.betha.com.br/cidadaoweb3/resource.faces?params=3UopnW5xjGmh0askFTtQsA==" target="_blank" class="texto1_submenu">Guia IPTU</a></li>
+                    <li><a href="https://e-gov.betha.com.br/cidadaoweb3/03015-013/rel_guiaiss.faces" target="_blank" class="texto1_submenu">ISS Pessoa física/ Taxas</a></li>
+                    <li><a href="https://e-gov.betha.com.br/e-nota/login.faces" target="_blank" class="texto1_submenu">Nota Fiscal(E-Notas)</a></li>
+                    <li><a href="@Url.Action("Serviço","Home")" class="texto1_submenu">Certidão Negativa</a> </li>
+                    <li><a href="https://e-gov.betha.com.br/cidadaoweb3/03015-013/con_processo.faces" target="_blank" class="texto1_submenu">Consulta protocolo</a> </li>
+                    <li><a href="http://e-gov.betha.com.br/transparencia/01029-004/con_registropedidoinformacao.faces?mun=rEa-e6IknR8=" target="_blank" class="texto1_submenu">Ouvidoria</a> </li>
+                    <li><a href="@Url.Action("EmDesenvolvimetno", "Home")" class="texto1_submenu"><hr class="hrmenu" /><span class="texto1_menu">Mais Serviços</span> </a></li>
+                </ul>
+            </li>
+            <li class="list-group-item ">
+                Empresa
+                <ul class="texto1 ">
+                    <li><span class="texto1_menu">Mais Acessados</span><hr class="hrmenu" /> </li>
+                    <li><a href="https://e-gov.betha.com.br/e-nota/verificar_autenticidade.faces" class="texto1_submenu" target="_blank">E-Nota</a></li>
+                    <li><a href="https://e-gov.betha.com.br/livroeletronico/login.faces" target="_blank" class="texto1_submenu">Livro eletronico</a></li>
+                    <li><a href="@Url.Action("Serviço","Home")" class="texto1_submenu">Certidão negativa(economico)</a> </li>
+                    <li><a href="https://e-gov.betha.com.br/cidadaoweb3/03015-013/rel_guiaiss.faces" class="texto1_submenu">Guia de ISS/ Taxas</a> </li>
+                    <li><a href="@Url.Action("EmDesenvolvimetno", "Home")" class="texto1_submenu"><hr class="hrmenu" /><span class="texto1_menu">Mais Serviços</span> </a></li>
+                </ul>
+            </li>
+            <li class="list-group-item "><a href="http://pregao.alfenas.mg.gov.br/" target="_blank">Licitações e pregões</a></li>
+            <li class="list-group-item "><a href="@Url.Action("Medicamentos", "Home")">Lista de Medicamentos</a></li>
+            <li class="list-group-item "><a href="@Url.Action("Planejamento","Home")">PMSB</a></li>
+            <li class="list-group-item ">
+                <a href="#">Serviços Uteis</a>
+                <ul class="texto1 ">
+                    <li class="list-group-item "><a href="@Url.Action("Jari","Home")">Editais Jarí</a></li>
+                    <li class="list-group-item "><a href="@Url.Action("Telefones","Home")">Telefones úteis</a></li>
+                    <li><a href="@Url.Action("TermoConstrução","Home")" class="texto1_submenu">Normas Construção</a></li>
+                    <li><a href="@Url.Action("EmDesenvolvimetno", "Home")" class="texto1_submenu">Normas Saneamento</a></li>
+                    <li class="list-group-item "><a href="@Url.Action("EmissaoAlvara","Home")">Emissão de alvará</a></li>
+                    <li class="list-group-item "><a href="@Url.Action("AreaAzul","Home")">Leis do edital área azul</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <!--div Carrousel-->
+    <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 nopadding marginbootom30">
+        <div id="myCarousel" class="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                @foreach (var variavel in ViewBag.Banner)
+                {
+
+
+
+                    foreach (var listaimagem in variavel.ListImagem)
+                    {
+                        if (listaimagem.Destaque == true)
+                        {
+                            if (countBanner == 0)
+                            {
+
+                                <div class="item active">
+
+
+                                    <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })"><img src="@baseurl/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" title="@variavel.Titulo" class="imgCarrouse"></a>
+                                    <div class="carousel-caption textobanner">
+                                        <h4>@variavel.Titulo</h4>
+
+                                    </div>
+                                </div>
+
+                                countBanner++;
+                            }
+                            else
+                            {
+
+
+
+                                <div class="item">
+
+
+                                    <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })"><img src="@baseurl/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" title="@variavel.Titulo" class="imgCarrouse"></a>
+
+                                    <div class="carousel-caption textobanner">
+                                        <h4>@variavel.Titulo</h4>
+
+                                    </div>
+                                </div>
+
+
+                            }
+
+
+                            break;
+                        }
+                    }
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+
+                <span class="icon-next"></span>
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!--Noticias-->
+<div class="row" ng-app="myApp" ng-controller="myCtrl">
+
+
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 noticias">
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" id="tituloNoticia">
+            <h3 class="texto1Head">Notícias</h3>
+        </div>
+
+        <!--repeat-->
+        @foreach (var variavel in ViewBag.Noticia)
+        {
+            foreach (var listaimagem in variavel.ListImagem)
+            {
+                if (listaimagem.Destaque == true)
+                {
+                    <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })">
+                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                            <p class="texto1Titulo">@variavel.Titulo </p>
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <img src="@baseurl/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" title="@variavel.Titulo" class="img-responsive" />
+                            </div>
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 ">
+                                <p class="textoteste hidden" id="@variavel.Id" ng-init="trocaTexto(@variavel.Id.ToString())">@variavel.Corpo</p>
+                                <p class="texto1Noticia">{{texto[@test]}}</p>
+
+
+                            </div>
+
+                        </div>
+                    </a>
+                    test++;
+                }
+            }
+        }
+
+        <!--fim repeat-->
+
+    </div>
+</div>
+
+<!--Informativo-->
+<div class="row">
+
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <center>
+            <a href="http://cidadescolaalfenas.blogspot.com.br/"> <img src="~/img/bannercidadeescolasite.jpg" class="img-responsive" title="cidade Escola" alt="cidade Escola" /></a>
+        </center>
+
+
+    </div>
+
+</div>
+
+<!--Banner-->
+<center>
+    <!--Banner 2 menor-->
+    <br />
+    <br />
+
+
+    <div>
+        <script src="~/js/jssor.slider.min.js"></script>
+        <!-- use jssor.slider.debug.js instead for debug -->
+        <script>
+            jssor_1_slider_init2 = function () {
+
+                var jssor_1_options = {
+                    $AutoPlay: true,
+                    $AutoPlaySteps: 4,
+                    $SlideDuration: 160,
+                    $SlideWidth: 400,
+                    $SlideSpacing: 4,
+                    $Cols: 2,
+                    $ArrowNavigatorOptions: {
+                        $Class: $JssorArrowNavigator$,
+                        $Steps: 4
+                    },
+                    $BulletNavigatorOptions: {
+                        $Class: $JssorBulletNavigator$,
+                        $SpacingX: 1,
+                        $SpacingY: 1
+                    }
+                };
+
+                var jssor_1_slider = new $JssorSlider$("jssor_2", jssor_1_options);
+
+                //responsive code begin
+                //you can remove responsive code if you don't want the slider scales while window resizing
+                function ScaleSlider() {
+                    var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                    if (refSize) {
+                        refSize = Math.min(refSize, 1140);
+                        jssor_1_slider.$ScaleWidth(refSize);
+                    }
+                    else {
+                        window.setTimeout(ScaleSlider, 30);
+                    }
+                }
+                ScaleSlider();
+                $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                //responsive code end
+            };
+        </script>
+
+        <style>
+            /* jssor slider bullet navigator skin 03 css */
+            /*
+                                    .jssorb03 div           (normal)
+                                    .jssorb03 div:hover     (normal mouseover)
+                                    .jssorb03 .av           (active)
+                                    .jssorb03 .av:hover     (active mouseover)
+                                    .jssorb03 .dn           (mousedown)
+                                    */
+            .jssorb03 {
+                position: absolute;
+            }
+
+                .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av {
+                    position: absolute;
+                    /* size of bullet elment */
+                    width: 21px;
+                    height: 21px;
+                    text-align: center;
+                    line-height: 21px;
+                    color: white;
+                    font-size: 12px;
+                    background: url('img/b03.png') no-repeat;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+
+                .jssorb03 div {
+                    background-position: -5px -4px;
+                }
+
+                    .jssorb03 div:hover, .jssorb03 .av:hover {
+                        background-position: -35px -4px;
+                    }
+
+                .jssorb03 .av {
+                    background-position: -65px -4px;
+                }
+
+                .jssorb03 .dn, .jssorb03 .dn:hover {
+                    background-position: -95px -4px;
+                }
+
+            /* jssor slider arrow navigator skin 03 css */
+            /*
+                                    .jssora03l                  (normal)
+                                    .jssora03r                  (normal)
+                                    .jssora03l:hover            (normal mouseover)
+                                    .jssora03r:hover            (normal mouseover)
+                                    .jssora03l.jssora03ldn      (mousedown)
+                                    .jssora03r.jssora03rdn      (mousedown)
+                                    */
+            .jssora03l, .jssora03r {
+                display: block;
+                position: absolute;
+                /* size of arrow element */
+                width: 55px;
+                height: 55px;
+                cursor: pointer;
+                background: url('img/a03.png') no-repeat;
+                overflow: hidden;
+            }
+
+            .jssora03l {
+                background-position: -3px -33px;
+            }
+
+            .jssora03r {
+                background-position: -63px -33px;
+            }
+
+            .jssora03l:hover {
+                background-position: -123px -33px;
+            }
+
+            .jssora03r:hover {
+                background-position: -183px -33px;
+            }
+
+            .jssora03l.jssora03ldn {
+                background-position: -243px -33px;
+            }
+
+            .jssora03r.jssora03rdn {
+                background-position: -303px -33px;
+            }
+        </style>
+
+
+        <div id="jssor_2" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 240px; overflow: hidden; visibility: hidden;">
+            <!-- Loading Screen -->
+            <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+            </div>
+
+            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 50px; width: 1300px; height: 240px; overflow: hidden;">
+                @foreach (var variavel in ViewBag.Banner2)
+                {
+                    foreach (var listaimagem in variavel.ListImagem)
+                    {
+                        if (listaimagem.Destaque == true)
+                        {
+
+                <!--repetir-->
+                            <div style="display: none;">
+                                <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })">
+                                    <img data-u="image" src="@baseurl/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" title="@variavel.Titulo" />
+
+                                </a>
+                            </div>
+                <!--fim repetir-->
+
+
+                        }
+                    }
+                }
+
+
+
+
+
+
+
+
+            </div>
+            <!-- Bullet Navigator -->
+            <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
+                <!-- bullet navigator item prototype -->
+                <div data-u="prototype" style="width:21px;height:21px;">
+                    <div data-u="numbertemplate"></div>
+                </div>
+            </div>
+            <!-- Arrow Navigator -->
+            <span data-u="arrowleft" class="jssora03l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+            <span data-u="arrowright" class="jssora03r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
+        </div>
+        <script>
+            jssor_1_slider_init2();
+        </script>
+
+
+
+
+    </div>
+
+
+
+    <br /><br />
+</center>
+
+<!--Secretaria-->
+<div class="row">
+
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 secretaria">
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 imagemtopo">
+            <p>Secretarias</p>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 imagemtopo">
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 20 })"> <img src="~/images/secretarias/spromocaosocial.jpg" class="img-responsive" alt="promocaosocial" title="promoção social" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 1 })">    <img src="~/images/secretarias/sadministracao.jpg" class="img-responsive" alt="administracao" title="Administração" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 27 })">   <img src="~/images/secretarias/sdefesasocial.jpg" class="img-responsive" alt="defesa social" title="Defesa social" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 37 })">    <img src="~/images/secretarias/seconomico.jpg" class="img-responsive" alt="desenvolvimento economico" title="desenvolvimento economico" /></a>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 imagemtopo">
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 57 })">       <img src="~/images/secretarias/sdesenvurbandoo.jpg" class="img-responsive" alt="desenvolvimento urbando" title="esenvolvimento urbando" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 59 })">      <img src="~/images/secretarias/seducacao.jpg" class="img-responsive" alt="Educação" title="Educação" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 50 })">      <img src="~/images/secretarias/sesporte.jpg" class="img-responsive" alt="Esporte" title="Esporte" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 11 })">       <img src="~/images/secretarias/sfazenda.jpg" class="img-responsive" alt="Fazenda" title="Fazenda" /></a>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 imagemtopo">
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 53 })">        <img src="~/images/secretarias/shabitacao.jpg" class="img-responsive" alt="habitação" title="habitação" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 50 })"> <img src="~/images/secretarias/sjuventude.jpg" class="img-responsive" alt="Juventude" title="Juventude" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12"></a>
+                <a href="@Url.Action("Secretaria", "Home", new { id = 42 })">    <img src="~/images/secretarias/smeioambiente.jpg" class="img-responsive" alt="Meio ambiente" title="Meio ambiente" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 58 })">   <img src="~/images/secretarias/splanejamentoor.jpg" class="img-responsive" alt="Planejamento e orçamento" title="Planejamento e orçamento" /></a>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 imagemtopo">
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 col-lg-offset-3">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 32 })">  <img src="~/images/secretarias/sprocuradoria.jpg" class="img-responsive" alt="Procuradoria" title="Procuradoria" /></a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 ">
+                <a href="@Url.Action("Secretaria", "Home", new { id = 93 })">   <img src="~/images/secretarias/ssaude.jpg" class="img-responsive" alt="saude" title="saude" /></a>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('.texto1Titulo').each(function () {
+            $(this).text($(this).text().substring(0, 40) + ' ...');
+
+        });
+
+
+
+    });
+
+</script>

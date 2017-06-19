@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "InserirImagem";
+    Layout = "~/Views/_MasterPageAdmin.cshtml";
+}
+
+<script src="~/scripts/tinymce/plugins/advlist/plugin.min.js"></script>
+<script src="~/scripts/tinymce/plugins/image/plugin.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+            <li class="active">Imagens</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Imagens</h1>
+            <h5 class="page-header">@ViewBag.erro </h5>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Lista de Imagens Banners</div>
+                <div class="panel-body">
+                    <table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="titulo">
+                        <thead>
+                            <tr>
+                                <th data-field="state">Excluir</th>
+                                <th data-field="stateD">Destacar</th>
+                                <th data-field="id" data-sortable="true">ID</th>
+                                <th data-field="titulo" data-sortable="true">Nome</th>
+                                <th data-field="data" data-sortable="true">Descrição</th>
+                                <th data-field="DescD" data-sortable="true">Destaque</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var variavel in ViewBag.listaImagem)
+                            {
+                                <tr>
+                                    <td data-field="state"><a href="@Url.Action("ExcluirFoto", "Banner", new { idImg = variavel.Id })">Excluir</a></td>
+                                    <td data-field="stateD"><a href="@Url.Action("DestacarImg", "Banner", new { id = variavel.Id, idDestaque = ViewBag.IdNoticia })">Destacar</a></td>
+                                    <td data-field="id" data-sortable="true">@variavel.Id</td>
+                                    <td data-field="titulo" data-sortable="true">@variavel.Nome</td>
+                                    <td data-field="data" data-sortable="true"><img src="~/Uploads/Img/@variavel.Descricao" class="img-responsive img-rounded img-thumbnail" width="42" height="42" /></td>
+                                    @{
+                                if (variavel.Destaque == true)
+                                {
+                                    <td data-field="DescD" data-sortable="true">Destaque</td>
+                                }
+                                else
+                                {
+                                    <td data-field="DescD" data-sortable="true">Comum</td>
+                                }
+
+                                    }
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            @using (Html.BeginForm("InserirImagem", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    <input name="IdImg" id="IdImg" style="visibility:hidden;" class="form-control" value="@ViewBag.IdImg">
+                    <label>Id Noticia</label>
+                    <input name="Id" id="Id" class="form-control" readonly="readonly" value="@ViewBag.IdNoticia">
+
+
+                </div>
+
+                <div class="form-group">
+                    <label>Fotos</label>
+                    <input type="file" class="multi" id="up" name="up" accept="image/*" multiple />
+                    <p class="help-block">Arquivos do tipo imagem e no maximo 1 MB.</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar Imagem</button>
+
+            }
+        </div>
+    </div><!--/.row-->
+
+
+
+</div><!--/.main-->
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/chart.min.js"></script>
+<script src="~/js/chart-data.js"></script>
+<script src="~/js/easypiechart.js"></script>
+<script src="~/js/easypiechart-data.js"></script>
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-table.js"></script>
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+</script>	
+

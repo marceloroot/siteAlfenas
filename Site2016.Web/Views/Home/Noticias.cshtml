@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Noticias";
+    Layout = "~/Views/_MasterPrincipal.cshtml";
+    var noticia = ViewBag.Noticias;
+    Uri url = System.Web.HttpContext.Current.Request.Url;
+    string UrlLink = url.OriginalString.Replace(url.PathAndQuery, "");
+    UrlLink = String.Concat(UrlLink, "/");
+    
+    
+
+}
+<div class="container">
+    <div class="row" style="margin-bottom:50px;">
+        
+            <div class="col-md-10 col-lg-10 col-sm-10 col-lg-offset-1 bg-primary" style="margin-bottom:20px; margin-top:40px; height:60px;">
+                <span class="h3" style=" float:left; margin-top:14px; margin-bottom:10px;  color:white;    font-family: Verdana, Arial, Helvetica, sans-serif; font-weight:bold; font-size:30px;">Noticias</span>
+            </div>
+       
+            <br />
+        <div class=" bg-info col-md-10 col-lg-10 col-sm-10 col-lg-offset-1" style="height:20px; margin-top:5px; font-size:14px;
+     color:#717070; width:12%;">
+            <p style=" margin-bottom:3px;"> Data: @ViewBag.DataPublicacao </p>
+        </div>
+
+        
+    </div>
+    <div class="col-md-11 col-lg-11 col-sm-11   font_telefones alinhar_esquerda_telefone" style="margin-left:6%">
+        <div class=" col-lg-11 col-md-11 col-sm-11" style="margin-top:20px;">
+            <h3 style="margin-bottom:25px;">@noticia.Titulo</h3>
+            @Html.Raw(@noticia.Corpo)
+
+
+        </div>
+
+        @if (ViewBag.arq != null)
+        { 
+
+        <div class="col-md-11 col-lg-11 col-sm-11" style="margin-top:50px;">
+            <div class="alert alert-info" role="alert">Lista de Arquivos</div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-lg-1">Id</th>
+                        <th class="col-lg-4">Nome</th>
+                        <th class="col-lg-6">Descricao</th>
+                        <th class="col-lg-1">Ver +</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var variavel in ViewBag.arq)
+                    {
+
+                        <tr>
+                            <td class="col-lg-1"><a href="@UrlLink/Admin/Uploads/NoticiaArq/@variavel.Caminho" target="_blank">@variavel.Id</a></td>
+                            <td class="col-lg-4"><a href="@UrlLink/Admin/Uploads/NoticiaArq/@variavel.Caminho" target="_blank">@variavel.Nome</a></td>
+                            <td class="col-lg-6"><a href="@UrlLink/Admin/Uploads/NoticiaArq/@variavel.Caminho" target="_blank">@variavel.Descricao</a></td>
+                            <td class="col-lg-1"><a href="@UrlLink/Admin/Uploads/NoticiaArq/@variavel.Caminho" target="_blank"><span class="glyphicon glyphicon-search col-lg-12" aria-hidden="true"></span></a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+        }
+        <div class=" col-lg-11 col-md-11 col-sm-11 tab-pane table-bordered" style="margin-top:20px;">
+            <div class="row">
+                @foreach (var variavel in ViewBag.img)
+                    {
+                    <div class="col-xs-6 col-md-3 ">
+                        <a href="@UrlLink/Admin/Uploads/Img/@variavel.Caminho" class="thumbnail">
+                            <img src="~/Admin/Uploads/Img/@variavel.Caminho" class=" img-responsive img-rounded img-thumbnail" alt="...">
+                        </a>
+                    </div>
+                    }
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_MasterPageAdmin.cshtml";
+}
+
+
+<script src="~/scripts/tinymce/plugins/image/plugin.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="//github.com/fyneworks/multifile/blob/master/jQuery.MultiFile.min.js" type="text/javascript" language="javascript"></script>
+
+
+
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg></a></li>
+            <li class="active">Cadastra Jari</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cadastro de Jari</h1>
+            <h5 class="page-header">@ViewBag.erro </h5>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Jari</div>
+                <div class="panel-body">
+                    <div class="col-md-8">
+
+                        @using (Html.BeginForm("Index", "Jari",null, FormMethod.Post,new {enctype = "multipart/form-data"}))
+                        {
+
+                            <div class="form-group">
+                                <label>Tipo de Jari</label>
+                                <select class="form-control" required="required" id="tipojari" name="tipojari">
+                                    <option disabled="disabled" selected="selected" value="">Escolha um Tipo</option>
+                                    @foreach (var variavel in ViewBag.TipoJari)
+                                    {
+                                        <option value="@variavel.Id">@variavel.Nome</option>
+
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                               
+                               <textarea id="corpo" rows="6" class="col-lg-12" name="corpo">Descrição</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Arquivo</label>
+                                <input required="required" type="file" class="multi" id="up" name="up" accept="application/pdf" />
+                                <p class="help-block">Arquivos do tipo pdf e no maximo 4 MB.</p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Cadastrar Jari</button>
+                            <button type="reset" class="btn btn-default">Limpar Campos</button>
+                        }
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/chart.min.js"></script>
+<script src="~/js/chart-data.js"></script>
+<script src="~/js/easypiechart.js"></script>
+<script src="~/js/easypiechart-data.js"></script>
+<script src="~/js/bootstrap-datepicker.js"></script>
+<script src="~/js/bootstrap-table.js"></script>

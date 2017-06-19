@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/estilo.css" rel="stylesheet" />
+  
+    <title>@ViewBag.Title</title>
+</head>
+
+
+
+<body>
+
+  
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                    <a href="http://transparencia.alfenas.mg.gov.br/"><img src="~/IMG/MasterPrincipal/transparencia.png" alt="" style="width:150px; height:54px;" /></a>
+                    <a href="http://transparencia.alfenas.mg.gov.br/Informacao">  <img src="~/IMG/MasterPrincipal/Acesso_Horizontal_JPG.png" alt="" style="width:52px; height:54px;" /></a>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7" style="margin-top:8px;" >
+
+
+                    <a style="text-decoration:none;  color:#999999; margin-left:41%;" href="http://transparencia.alfenas.mg.gov.br/" >
+                        <img src="~/IMG/MasterPrincipal/lupa.png" /> Transparência |
+                    </a>
+
+
+                    <a style="text-decoration:none;  color:#999999;" href="@Url.Action("Telefones","Home")"> <img src="~/IMG/MasterPrincipal/telefone.png" /> Telefones | </a>
+
+
+
+                    <a style="text-decoration:none;  color:#999999;" href="https://mail.google.com/">
+                        <img src="~/IMG/MasterPrincipal/email.png" /> E-mails |
+                    </a>
+
+
+                    <a style="text-decoration:none;  color:#999999;" href="#">
+                        <img src="~/IMG/MasterPrincipal/facebook.png" /> Facebook
+                    </a>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <img src="~/IMG/MasterPrincipal/Sem título-2.png" class=" img-responsive img-rounded" />
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top:10px; margin-bottom:10px;">
+
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation" class="active">   <a href="@Url.Action("Index","Home")">Início  </a></li>
+                <li role="presentation">  <a href="@Url.Action("Manutencao","Home")"> Cidade</a></li>
+                <li role="presentation">  <a href="@Url.Action("Manutencao", "Home")"> Prefeitura</a></li>
+                <li role="presentation">   <a href="@Url.Action("ListaNoticias","Home")"> Notícias  </a></li>
+                <li role="presentation"> <a href="@Url.Action("ListaSecretaria","Home")">Secretarias</a></li>
+                <li role="presentation">  <a href="http://e-gov.betha.com.br/transparencia/01023-000/con_registropedidoinformacao.faces?mun=rEa-e6IknR8="> Ouvidoria </a></li>
+                <li role="presentation">  <a href="@Url.Action("Jari","Home")"> Trânsito </a></li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+    @RenderBody()
+
+
+    <!--RODAPÉ-->
+
+    <div class="row rodape">
+
+        <div class="col-lg-2 col-md-2 col-sm-2 ol-lg-offset-2 col-md-offset-2 col-sm-offset-2 rodape">
+
+            <div class="rodape_font">
+                Serviços online <img src="~/IMG/MasterPrincipal/seta.png" /><br />
+            </div>
+
+            <div class="rodape_font_normal">
+                <a href="-" class="nounderline">Informe</a> <br />
+                <a href="-" class="nounderline">Consulta de Protocolo</a> <br />
+                <a href="-" class="nounderline">Nota Fiscal Eletrônica</a> <br />
+                <a href="-" class="nounderline">Situação de contribuiente</a> <br />
+                <a href="-" class="nounderline">ISS Pessoa Física / Taxas</a> <br />
+            </div>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-3 col-sm-3 rodape">
+
+            <div class="rodape_font">
+                Serviços da Prefeitura <img src="~/IMG/MasterPrincipal/seta.png" /><br />
+            </div>
+
+            <div class="rodape_font_normal">
+                <a href="-" class="nounderline">Concursos</a> <br />
+                <a href="-" class="nounderline">Vagas do Sine</a> <br />
+                <a href="-" class="nounderline">Telefones da Prefeitura</a> <br />
+                <a href="-" class="nounderline">Licitações e Pregões</a> <br />
+                <a href="-" class="nounderline">Guia de  IPTU</a> <br />
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="col-lg-5 col-md-5 col-sm-5 brasao_rodape">
+
+            <div>
+                <img src="~/IMG/MasterPrincipal/logo_prefeiura.png" /> Prefeitura Municipal de Alfenas
+                <div class="subscrito">________________________________</div>
+            </div>
+
+            <br />
+
+            <div class="col-lg-12 col-md-12 col-sm-12 icones_contato">
+
+                <div class="col-lg-1 col-md-1 col-sm-1"> <img src="~/IMG/MasterPrincipal/local.png" /></div>
+                <div class="col-lg-10 col-md-10 col-sm-10">Praça Dr. Emilio da Silveira , s/n <br />Centro Cep 37.130-029 </div>
+
+                <br /><br /><br />
+
+                <div class="col-lg-1 col-md-1 col-sm-1"> <img src="~/IMG/MasterPrincipal/telefone2.png" /></div>
+                <div class="col-lg-10 col-md-10 col-sm-10">08002830448</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+</html>

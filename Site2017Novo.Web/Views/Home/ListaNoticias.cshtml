@@ -1,0 +1,42 @@
+﻿@using PagedList.Mvc
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "ListaNoticias";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 topoSubpag">
+        <h3>Notícias</h3>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+
+    @{
+
+        foreach (var variavel in ViewBag.Noticias)
+        {
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 linha-vertical">
+                <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id })">
+                    <p>@variavel.DataPublicacao.ToShortDateString()</p>
+                    <h5>@variavel.Titulo</h5>
+                </a>
+            </div>
+        }
+        }
+
+
+
+        <center>
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                Pagina @ViewBag.Noticias.PageNumber de @ViewBag.Noticias.PageCount
+
+                @Html.PagedListPager((PagedList.PagedList<Site2016.Dominio.Noticia>)ViewBag.Noticias, page => Url.Action("ListaNoticias", new { pagina = page }))
+            </div>
+
+        </center>
+    </div>

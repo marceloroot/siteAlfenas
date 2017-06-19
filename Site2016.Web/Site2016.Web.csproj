@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13D0F625-8712-406D-B3EC-6B50B4AACBC1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Site2016.Web</RootNamespace>
+    <AssemblyName>Site2016.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\estilo.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Estilo.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Arquivos\Alvara\Academia de Ginástica.pdf" />
+    <Content Include="Arquivos\Alvara\Atividade Odontológica.pdf" />
+    <Content Include="Arquivos\Alvara\Atividade Veterinária.pdf" />
+    <Content Include="Arquivos\Alvara\Atividades de Fisioterapia.pdf" />
+    <Content Include="Arquivos\Alvara\Clube Desportivo e Sauna.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Atacadista de Cosméticos e de Higiene Pessoal e Saneantes.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Atacadista de Produtos para Saúde.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Varejista de Alimentos.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Varejista de Cosméticos e de Higiene Pessoal e Saneantes.pdf" />
+    <Content Include="Arquivos\Alvara\Comércio Varejista de Suplementos Alimentares.pdf" />
+    <Content Include="Arquivos\Alvara\Consultório de Profissional da Saúde.pdf" />
+    <Content Include="Arquivos\Alvara\Creche e Estabelecimento de Ensino.pdf" />
+    <Content Include="Arquivos\Alvara\Farmácia, Drogaria e Distribuidora de Medicamentos.pdf" />
+    <Content Include="Arquivos\Alvara\HospitaL, Clínica e Ambulatório.pdf" />
+    <Content Include="Arquivos\Alvara\Hotel, Motel,  Pensão e similares.pdf" />
+    <Content Include="Arquivos\Alvara\Indústria de Alimentos.pdf" />
+    <Content Include="Arquivos\Alvara\Indústria de Cosméticos.pdf" />
+    <Content Include="Arquivos\Alvara\Indústria e Distribuidora de Domissanitários.pdf" />
+    <Content Include="Arquivos\Alvara\Laboratório de Análises Clínicas e Posto de Coleta.pdf" />
+    <Content Include="Arquivos\Alvara\Lavanderia.pdf" />
+    <Content Include="Arquivos\Alvara\Salão de Beleza.pdf" />
+    <Content Include="Arquivos\Alvara\Serviço de Controle de Pragas.pdf" />
+    <Content Include="Arquivos\Alvara\Serviço de Limpeza.pdf" />
+    <Content Include="Arquivos\Alvara\Serviços de Prótese Dentária.pdf" />
+    <Content Include="Arquivos\Alvara\Serviços Funerários.pdf" />
+    <Content Include="Arquivos\Alvara\Ópticas.pdf" />
+    <Content Include="Arquivos\AreaAzul\Decreto843.pdf" />
+    <Content Include="Arquivos\Cep\CEPNOVO.pdf" />
+    <Content Include="Arquivos\TermoCon\3941_-_Anexo_III_plano_diretor_camara.doc.doc" />
+    <Content Include="Arquivos\TermoCon\3941_-_Lei_do_Plano_Diretor_2006.doc.doc" />
+    <Content Include="Arquivos\TermoCon\codigo_de_obras_Lei_856_de_23-11-1964.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\decreto_121_de_2007-_normas_geoprocessamento.doc.doc" />
+    <Content Include="Arquivos\TermoCon\DECRETO_539_DE_17_DE_MAIO_DE_2012.doc.doc" />
+    <Content Include="Arquivos\TermoCon\documentacao_necessaria_para_obtencao_de_licencas.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Estabelce_norma_para_construcao_urbana.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_2484_1993_-Parcelamento_do_Solo%28sem_anexos%29.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3137-99_loteamentos_fechados_condominiais_de_chacars_ou_sitio_de_recreio.doc %281%29.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3137-99_loteamentos_fechados_condominiais_de_chacars_ou_sitio_de_recreio.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3216-00_denominacao_logradouros.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\Lei_3534-03-_INSTALACAO_DE_ANTENAS.doc.doc" />
+    <Content Include="Arquivos\TermoCon\Lei_3839_-_Caderneta_de_obras.doc.doc" />
+    <Content Include="Arquivos\TermoCon\lei_delimita_o_perimetro_urbano.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\lei_parcelamento_do_solo_anexos.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\lei__nº2595_de_09_de_09_de_1994.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\narmas_para_o_habite-se.pdf.pdf" />
+    <Content Include="Arquivos\TermoCon\RESTRICOES_JARDIM_DA_COLINA.doc.doc" />
+    <Content Include="Arquivos\TermoCon\restricoes_urbanisticas_dos__loteamentos.doc.doc" />
+    <Content Include="Arquivos\TermoCon\termo.pdf" />
+    <Content Include="Arquivos\RPS.pdf" />
+    <None Include="Properties\PublishProfiles\site2016Web.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="IMG\Home\banner_destaque.jpg" />
+    <Content Include="IMG\Home\banner_editais.jpg" />
+    <Content Include="IMG\Home\seta.png" />
+    <Content Include="IMG\manutencao.jpg" />
+    <Content Include="IMG\MasterPrincipal\Acesso_Horizontal_JPG.png" />
+    <Content Include="IMG\MasterPrincipal\brasao.png" />
+    <Content Include="IMG\MasterPrincipal\email.png" />
+    <Content Include="IMG\MasterPrincipal\facebook.png" />
+    <Content Include="IMG\MasterPrincipal\img_cidade.png" />
+    <Content Include="IMG\MasterPrincipal\linha.png" />
+    <Content Include="IMG\MasterPrincipal\local.png" />
+    <Content Include="IMG\MasterPrincipal\logo_prefeiura.png" />
+    <Content Include="IMG\MasterPrincipal\lupa.png" />
+    <Content Include="IMG\MasterPrincipal\Sem título-2.png" />
+    <Content Include="IMG\MasterPrincipal\seta.png" />
+    <Content Include="IMG\MasterPrincipal\telefone.png" />
+    <Content Include="IMG\MasterPrincipal\telefone2.png" />
+    <Content Include="IMG\MasterPrincipal\transparencia.png" />
+    <Content Include="IMG\Noticias\51.jpg" />
+    <Content Include="IMG\Noticias\52.png" />
+    <Content Include="IMG\Noticias\53.png" />
+    <Content Include="IMG\Noticias\54.jpg" />
+    <Content Include="IMG\Noticias\55.jpg" />
+    <Content Include="IMG\Noticias\81.png" />
+    <Content Include="IMG\Noticias\91.jpg" />
+    <Content Include="IMG\Noticias\banner_destaque.jpg" />
+    <Content Include="IMG\Noticias\noticia.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Estilo.css" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jssor.slider.debug.js" />
+    <Content Include="Scripts\jssor.slider.min.js" />
+    <Content Include="Scripts\jssor.slider.mini.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_MasterPrincipal.cshtml" />
+    <Content Include="Views\Home\Telefones.cshtml" />
+    <Content Include="Views\Home\Noticias.cshtml" />
+    <Content Include="Views\Home\ListaNoticias.cshtml" />
+    <Content Include="Views\Home\Jari.cshtml" />
+    <Content Include="Views\Home\NotAtNaoRecebida.cshtml" />
+    <Content Include="Views\Home\ListaSecretaria.cshtml" />
+    <Content Include="Views\Home\Secretaria.cshtml" />
+    <Content Include="Views\Home\EmissaoAlvara.cshtml" />
+    <Content Include="Views\Home\TermoConstrucao.cshtml" />
+    <Content Include="Views\Home\AreaAzul.cshtml" />
+    <Content Include="Views\Home\Manutencao.cshtml" />
+    <Content Include="Views\Home\CertidaoNegativo.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Arquivos\Jari\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Site2016.Dominio\Site2016.Dominio.csproj">
+      <Project>{220c8492-18c2-4cd0-9f12-d7ba70419437}</Project>
+      <Name>Site2016.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Site2016.InfraEstrutura\Site2016.InfraEstrutura.csproj">
+      <Project>{2dbf5b52-1d2f-414e-a5f9-e02a2e7d5a0a}</Project>
+      <Name>Site2016.InfraEstrutura</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Site2016.Negocio\Site2016.Negocio.csproj">
+      <Project>{164c410a-e44d-4d74-8d37-8112fbd9dd4b}</Project>
+      <Name>Site2016.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1373</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1374/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
