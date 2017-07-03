@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Noticias";
+    Layout = "~/Views/Shared/_Master.cshtml";
+    var urlHelper = new UrlHelper(Html.ViewContext.RequestContext);
+    var baseurl = "http://alfenas.mg.gov.br/Admin";
+    Uri url = System.Web.HttpContext.Current.Request.Url;
+    string UrlLink = url.OriginalString.Replace(url.PathAndQuery, "");
+    UrlLink = String.Concat(UrlLink, "/");
+}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <p><strong>Compartilhe</strong></p>
+        <p>
+
+            <img src="~/images/Inicio/redesociais/F1.png" alt="Facebook" title="Facebook" />
+            <img src="~/images/Inicio/redesociais/T2.png" alt="Tiwitter" title="Tiwitter" />
+            <img src="~/images/Inicio/redesociais/g3.png" alt="Google +" title="Google +" />
+            <img src="~/images/Inicio/redesociais/i4.png" alt="i" +" title="i" />
+
+
+        </p>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+       
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <hr class="linhahorizontalLateral " />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 noticias">
+                    <h3>@ViewBag.Noticias.Titulo</h3>
+
+                    <p>
+                        <span>por Ascom</span>  Ultima Modificação em @ViewBag.Noticias.DataPublicacao.ToShortDateString() |  @ViewBag.Noticias.DataPublicacao.Hour.ToString()H @ViewBag.Noticias.DataPublicacao.Minute.ToString()min  |
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 noticia">
+                    <h3>
+                        @Html.Raw(ViewBag.Noticias.Corpo)
+                    </h3>
+                </div>
+
+
+            </div>
+       
+    </div>
+</div>
+
+<div class="row marginbottom15p">
+@if (ViewBag.arq != null)
+{
+    foreach (var variavel in ViewBag.arq)
+    {
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 linhavertical">
+            <a href="@UrlLink/Admin/Uploads/NoticiaArq/@variavel.Caminho">
+                <p>Arquivo @variavel.Id</p>
+                <h5>@variavel.Nome</h5>
+            </a>
+        </div>
+
+    }
+}
+
+</div>
+<div class="row">
+    @foreach (var variavel in ViewBag.img)
+    {
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
+            <a href="@UrlLink/Admin/Uploads/Img/@variavel.Caminho" class="thumbnail">
+                <img src="@baseurl/Uploads/Img/@variavel.Caminho " alt=" img" title="img">
+            </a>
+        </div>
+
+    }
+
+
+
+
+
+</div>
+
+
+

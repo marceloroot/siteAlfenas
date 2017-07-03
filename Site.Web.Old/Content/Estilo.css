@@ -2,10 +2,18 @@
 a{
        text-decoration:none;
        cursor:pointer;
+          color:black;
+}
+a:visited{
+    color:black;
+    text-decoration:none;
+}
+a:hover{
+    color:#808080;
 }
 #topo{
     
-    background-color:#A7C4D2;
+    background-color:#447136;
     height:51px;
   
 }
@@ -35,7 +43,7 @@ a{
 }
 #menu{
       
-    background-color:#29577B;
+    background-color:#1F5637;
    
 }
 .margintop8{
@@ -89,7 +97,7 @@ a{
 }
 #subMenu{
      
-    background-color:#A7C4D2;
+    background-color:#447136;
         margin-bottom:2%;
 
 }
@@ -169,7 +177,7 @@ a{
 #rodape{
     
 
-    background-color:#88A0AC;
+    background-color:#1F5637;
 
     margin-top:5px;
 }
@@ -223,7 +231,7 @@ a{
 }
 #subMenuRodape
 {
-    background-color:#A7C4D2;
+    background-color:#447136;
 
 }
 #subMenuRodape img{
@@ -255,10 +263,15 @@ a{
         left:0% !important;
         right:0 !important;
 }
+.noticia p {
+     font-family:Arial;
+    font-size:14px;
+   
+}
 .noticias h3{
 
     font-family:Arial;
-    font-size:32px;
+    font-size:20px;
     font-weight:bold;
 }
 
