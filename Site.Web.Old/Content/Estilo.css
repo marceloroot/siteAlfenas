@@ -13,7 +13,7 @@ a:hover{
 }
 #topo{
     
-    background-color:#447136;
+    background-color:#FE0000;
     height:51px;
   
 }
@@ -43,7 +43,7 @@ a:hover{
 }
 #menu{
       
-    background-color:#1F5637;
+    background-color:#FEFEFE;
    
 }
 .margintop8{
@@ -97,7 +97,7 @@ a:hover{
 }
 #subMenu{
      
-    background-color:#447136;
+    background-color:#010066;
         margin-bottom:2%;
 
 }
@@ -138,10 +138,18 @@ a:hover{
     font-size:9px;
     color:black;
     margin-bottom:3px;
+   
     
     
 }
-
+#meio{
+     border-left:solid #ccc 3px;
+      border-right:solid #ccc 3px;
+      border-top:solid #ccc 3px;
+}
+.imglateral{
+   
+}
 .linkLateral{
   
     
@@ -177,7 +185,7 @@ a:hover{
 #rodape{
     
 
-    background-color:#1F5637;
+    background-color:#010066;
 
     margin-top:5px;
 }
@@ -231,7 +239,7 @@ a:hover{
 }
 #subMenuRodape
 {
-    background-color:#447136;
+    background-color:#FE0000;
 
 }
 #subMenuRodape img{

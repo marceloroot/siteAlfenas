@@ -180,6 +180,7 @@
     <Content Include="images\Home\áudio rodape.png" />
     <Content Include="images\Inicio\2 via de iptu - Cópia.png" />
     <Content Include="images\Inicio\2 via de iptu.png" />
+    <Content Include="images\Inicio\acesso-a-informacao2.jpg" />
     <Content Include="images\Inicio\administração - Cópia.png" />
     <Content Include="images\Inicio\administração.png" />
     <Content Include="images\Inicio\agricultura - Cópia.png" />
@@ -188,6 +189,7 @@
     <Content Include="images\Inicio\apae.png" />
     <Content Include="images\Inicio\ação social - Cópia.png" />
     <Content Include="images\Inicio\ação social.png" />
+    <Content Include="images\Inicio\banner-vigilancia-sanitariaPronto.png" />
     <Content Include="images\Inicio\banner\bannePrincipal1.jpg" />
     <Content Include="images\Inicio\banner\banner1.png" />
     <Content Include="images\Inicio\banner\banner2.jpg" />
@@ -220,7 +222,12 @@
     <Content Include="images\Inicio\governo.png" />
     <Content Include="images\Inicio\habitação.png" />
     <Content Include="images\Inicio\hospitais.png" />
+    <Content Include="images\Inicio\itbipronto.png" />
     <Content Include="images\Inicio\juventude e turismo.png" />
+    <Content Include="images\Inicio\ListamedicamentosPronto.png" />
+    <Content Include="images\Inicio\LiticataopregaoPronto.png" />
+    <Content Include="images\Inicio\logo_PMSB-horizontal-01 %283%29.jpg" />
+    <Content Include="images\Inicio\logo_PMSB-horizontapronto.jpg" />
     <Content Include="images\Inicio\mei empresas.png" />
     <Content Include="images\Inicio\meio ambiente.png" />
     <Content Include="images\Inicio\mercado municipal.png" />
@@ -231,6 +238,7 @@
     <Content Include="images\Inicio\poda de arvore.png" />
     <Content Include="images\Inicio\policia militar.png" />
     <Content Include="images\Inicio\processo seletivo.png" />
+    <Content Include="images\Inicio\processosletivoPronto.png" />
     <Content Include="images\Inicio\procon.png" />
     <Content Include="images\Inicio\procuradoria.png" />
     <Content Include="images\Inicio\psf.png" />
