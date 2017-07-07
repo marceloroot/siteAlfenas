@@ -19,7 +19,8 @@ namespace Site2017Novo.Web.Controllers
             var banner = contexto.Noticia.Include(c => c.TipoNoticiaUnica).Include(c => c.ListImagem).OrderByDescending(c => c.DataPublicacao).ToList();
             ViewBag.Banner = banner.Take(4);
             ViewBag.Banner2 = banner.Take(8);
-            ViewBag.Noticia = banner.Skip(4).Take(4).ToList();
+            var dfe = banner.Skip(4).Take(6).ToList();
+            ViewBag.Noticia = banner.Skip(4).Take(6).ToList();
             return View();
         }
 

@@ -20,7 +20,7 @@ namespace Site.Web.Old.Controllers
           
             ViewBag.Banner = banner.Take(3);
             ViewBag.Banner2 = banner.Take(8);
-            ViewBag.Noticia = banner.Skip(4).Take(3).ToList();
+            ViewBag.Noticia = banner.Skip(4).Take(6).ToList();
             return View();
         }
 
