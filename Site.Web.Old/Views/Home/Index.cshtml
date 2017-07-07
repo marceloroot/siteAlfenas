@@ -457,7 +457,9 @@
         <!--Noticia-->
 
         <div class="row marginbottom15p margintop8">
-            <h2>Destaque</h2>
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                <h3>Destaque</h3>
+            </div>
 
               <!--repeat-->
 @foreach (var variavel in ViewBag.Noticia)
@@ -470,7 +472,7 @@
 
                 <a href="@Url.Action("Noticias", "Home", new { id = variavel.Id})">
                     <img src="@baseurl/Uploads/Img/@listaimagem.Caminho" alt="@variavel.Titulo" title="@variavel.Titulo" class="img-responsive" />
-               
+
                     <p>@variavel.Titulo</p>
                  </a>
 
